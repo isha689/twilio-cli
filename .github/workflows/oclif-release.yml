@@ -45,7 +45,7 @@ jobs:
         with:
           source-directory: 'dist'
           destination-github-username: 'isha689'
-          destination-repository-name: 'packages'
+          destination-repository-name: 'test'
           user-email: ibansal@twilio.com
           target-branch: main
 #      - name: Configure AWS credentials from Test account
