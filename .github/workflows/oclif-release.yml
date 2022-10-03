@@ -1,19 +1,19 @@
 name: Oclif Release
-on: [workflow_dispatch]
-#  workflow_dispatch:
-#    inputs:
-#      home-brew-branch:
-#        description: 'Run workflow in home brew branch'
-#        default: main
-#      tag-name:
-#        description: 'Tag to be released in Homebrew (Same as CLI latest tag name)'
-#        required: true
-#      formula:
-#          description: 'Formula to release in homebrew'
-#          default: twilio
-#      pre-release:
-#        description: 'Homebrew release type'
-#        default: 'false'
+on:
+  workflow_dispatch:
+    inputs:
+      home-brew-branch:
+        description: 'Run workflow in home brew branch'
+        default: main
+      tag-name:
+        description: 'Tag to be released in Homebrew (Same as CLI latest tag name)'
+        required: true
+      formula:
+          description: 'Formula to release in homebrew'
+          default: twilio
+      pre-release:
+        description: 'Homebrew release type'
+        default: 'false'
 
 jobs:
   oclif-release:
