@@ -38,16 +38,51 @@ jobs:
             brew install makensis
           fi
           ${{ matrix.command_name }}
-      - name: Publish to packages
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+      - name: Clone test repo
+        uses: actions/checkout@master
         with:
-          source-directory: 'dist'
-          destination-github-username: 'isha689'
-          destination-repository-name: 'test'
-          user-email: ibansal@twilio.com
-          target-branch: main
+          repository: isha689/test
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: ./test
+
+      - name: Publish to packages
+        run: |
+          cp -R ./dist ./test
+          cd ./test
+          git add .
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "Uploaded packages"
+          git push
+#          FILE=./projectA/file
+#          if [ -f "$FILE" ]; then
+#            echo "Copying $FILE"
+#            cp -R ./projectA/file ./projectB
+#          else
+#            echo "Creating $FILE"
+#            touch ./projectB/file
+#          fi
+
+#      - name: Push Project B
+#        run: |
+#          cd ./test
+#          git add .
+#          git config user.name github-actions
+#          git config user.email github-actions@github.com
+#          git commit -am "File Replicated from Project A"
+#          git push
+
+#      - name: Publish to packages
+#        uses: cpina/github-action-push-to-another-repository@main
+#        env:
+#          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+#        with:
+#          source-directory: 'dist'
+#          destination-github-username: 'isha689'
+#          destination-repository-name: 'test'
+#          destination-directory: 'apt'
+#          user-email: ibansal@twilio.com
+#          target-branch: main
 #      - name: Configure AWS credentials from Test account
 #        uses: aws-actions/configure-aws-credentials@v1
 #        with:
