@@ -47,7 +47,7 @@ jobs:
 
       - name: Publish to packages
         run: |
-          cp -R ./dist ./test
+          cp -R ./dist/ ./test
           cd ./test
           git add .
           git config user.name github-actions
