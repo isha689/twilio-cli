@@ -145,6 +145,12 @@
       "identifier": "com.twilio.cli",
       "sign": "Developer ID Installer: Twilio, Inc."
     },
+    "update": {
+      "github": {
+        "xz": true,
+        "url": "https://isha689.github.io/test"
+      }
+    },
     "helpClass": "./src/services/twilio-help/custom-help"
   }
 }
