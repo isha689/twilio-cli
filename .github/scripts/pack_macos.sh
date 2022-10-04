@@ -49,9 +49,8 @@ pack_macos() {
 #  then
     import_certificate
     npx oclif pack:macos
-    cd dist/macos
+    cd dist
     ls
-    cd ..
     cd ..
     notarize_and_staple "$FILE_PATH_ARM64"
     notarize_and_staple "$FILE_PATH_X64"
