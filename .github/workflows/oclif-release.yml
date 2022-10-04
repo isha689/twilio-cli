@@ -37,6 +37,7 @@ jobs:
           if [ "$RUNNER_OS" == "macOS" ]; then
             brew install makensis
           fi
+          echo "${{ github.event.inputs.tag-name }}"
           ${{ matrix.command_name }}
       - name: Clone test repo
         uses: actions/checkout@master
@@ -52,6 +53,11 @@ jobs:
           make clean
           make install
           brew install coreutils
+          echo "contents of dist/channels"
+          for filename in $(ls ./dist/channels)
+          do
+            echo $filename
+          done;
           if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
             echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
@@ -67,35 +73,6 @@ jobs:
           git commit -am "Uploaded packages"
           git push
 
-#          FILE=./projectA/file
-#          if [ -f "$FILE" ]; then
-#            echo "Copying $FILE"
-#            cp -R ./projectA/file ./projectB
-#          else
-#            echo "Creating $FILE"
-#            touch ./projectB/file
-#          fi
-
-#      - name: Push Project B
-#        run: |
-#          cd ./test
-#          git add .
-#          git config user.name github-actions
-#          git config user.email github-actions@github.com
-#          git commit -am "File Replicated from Project A"
-#          git push
-
-#      - name: Publish to packages
-#        uses: cpina/github-action-push-to-another-repository@main
-#        env:
-#          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
-#        with:
-#          source-directory: 'dist'
-#          destination-github-username: 'isha689'
-#          destination-repository-name: 'test'
-#          destination-directory: 'apt'
-#          user-email: ibansal@twilio.com
-#          target-branch: main
 #      - name: Configure AWS credentials from Test account
 #        uses: aws-actions/configure-aws-credentials@v1
 #        with:
