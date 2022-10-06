@@ -85,7 +85,9 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
     }
     try {
       // fetch existing Packages file which needs to be modified for new version
-      await qq.x(`aws s3 cp s3://${pjson.oclif.update.s3.bucket}/apt/Packages Packages`, {cwd: dist, reject: false});
+      // await qq.x(`aws s3 cp s3://${pjson.oclif.update.s3.bucket}/apt/Packages Packages`, {cwd: dist, reject: false});
+      // const content = fs.readFileSync(`${dist}/Packages`);
+      await qq.x(`wget https://isha689.github.io/test/apt/Packages -O Packages`, {cwd: dist, reject: false})
       const content = fs.readFileSync(`${dist}/Packages`);
     }
     catch(error) {
@@ -110,13 +112,14 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
     const ftparchive = qq.join(rootDir, 'tmp', 'apt', 'apt-ftparchive.conf');
     await qq.write(ftparchive, scripts.ftparchive(config));
     await qq.x(`apt-ftparchive -c "${ftparchive}" release . > Release`, {cwd: dist});
-    const gpgKey = process.env.GPG_SIGNING_KEY_ID;
-    const passphrase = process.env.GPG_SIGNING_KEY_PASSPHRASE;
-    if (gpgKey) {
-      await qq.x(`gpg --digest-algo SHA512 --clearsign -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o InRelease Release`, {cwd: dist});
-      await qq.x(`gpg --digest-algo SHA512 -abs -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o Release.gpg Release`, {cwd: dist});
-    }
-    await qq.x(`aws s3 cp ${dist} s3://${pjson.oclif.update.s3.bucket}/apt --recursive --acl public-read`);
+    // const gpgKey = process.env.GPG_SIGNING_KEY_ID;
+    // const passphrase = process.env.GPG_SIGNING_KEY_PASSPHRASE;
+    // if (gpgKey) {
+    //   await qq.x(`gpg --digest-algo SHA512 --clearsign -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o InRelease Release`, {cwd: dist});
+    //   await qq.x(`gpg --digest-algo SHA512 -abs -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o Release.gpg Release`, {cwd: dist});
+    // }
+    //await qq.x(`aws s3 cp ${dist} s3://${pjson.oclif.update.s3.bucket}/apt --recursive --acl public-read`);
+    // await qq.x(git_commit_script.get(debVersion));
   }
   // importing secret key
   const importGPG  = async() => {
@@ -129,7 +132,7 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
   }
 
 (async () => {
-  importGPG();
+  // importGPG();
   const archStr = process.argv[2];
   const arches = archStr.split(",");
   await packDebian(arches);

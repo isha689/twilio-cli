@@ -50,17 +50,6 @@ jobs:
         id: sha256
         if: ${{matrix.publish == 'homebrew'}}
         run: |
-          ls
-          echo "Inside ./dist "
-          cd ./dist
-          ls
-          cd ..
-          echo "Inside ./dist/twilio-v5.1.2 "
-          cd ./dist/twilio-v5.1.2
-          ls
-          cd ..
-          cd ..
-
           make clean
           make install
           brew install coreutils
