@@ -42,6 +42,7 @@ jobs:
 
       - name: Clone test repo
         run: |
+          rm -r test
           git clone --filter=blob:none --no-checkout git@github.com:isha689/test.git
           cd ./test
           git sparse-checkout init --cone
