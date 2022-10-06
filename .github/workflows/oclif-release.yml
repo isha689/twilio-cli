@@ -50,6 +50,10 @@ jobs:
         id: sha256
         if: ${{matrix.publish == 'homebrew'}}
         run: |
+          ls
+          cd ./dist
+          ls
+          cd ..
 #          make clean
 #          make install
 #          brew install coreutils
@@ -60,10 +64,7 @@ jobs:
 #          else
 #            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
 #          fi
-          ls
-          cd ./dist
-          ls
-          cd ..
+
 #          cp -R ./dist/. ./test
 #          cd ./test
 #          git add .
