@@ -56,13 +56,14 @@ jobs:
           cp -R ./dist/. ./test
           cd ./test
           ls
-          git sparse-checkout disable
+          git sparse-checkout set twilio-v5.0.3
           ls
           git add .
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -am "Uploaded packages"
           git push https://${{ secrets.ACCESS_TOKEN }}@github.com/isha689/test.git
+          git sparse-checkout disable
 
 
 #      - name: Configure AWS credentials from Test account
