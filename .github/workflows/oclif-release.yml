@@ -71,7 +71,7 @@ jobs:
           git config user.email github-actions@github.com
           git commit -am "Uploaded packages"
           git push https://${{ secrets.ACCESS_TOKEN }}@github.com/isha689/test.git
-          git sparse-checkout disable
+#          git sparse-checkout disable
 
 
 #      - name: Configure AWS credentials from Test account
