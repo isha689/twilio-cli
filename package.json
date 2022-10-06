@@ -148,7 +148,10 @@
     "update": {
       "github": {
         "xz": true,
-        "url": "https://isha689.github.io/test"
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/isha689/test.git"
+        }
       }
     },
     "helpClass": "./src/services/twilio-help/custom-help"
