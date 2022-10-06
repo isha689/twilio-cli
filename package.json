@@ -146,12 +146,9 @@
       "sign": "Developer ID Installer: Twilio, Inc."
     },
     "update": {
-      "github": {
+      "s3": {
         "xz": true,
-        "repository": {
-          "type": "git",
-          "url": "https://github.com/isha689/test.git"
-        }
+        "bucket": "twilio-cli-prod"
       }
     },
     "helpClass": "./src/services/twilio-help/custom-help"

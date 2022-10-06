@@ -54,6 +54,11 @@ jobs:
           cd ./dist
           ls
           cd ..
+          cd ./dist/twilio-v5.1.1
+          ls
+          cd ..
+          cd ..
+
 #          make clean
 #          make install
 #          brew install coreutils
