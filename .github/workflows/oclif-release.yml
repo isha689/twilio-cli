@@ -55,8 +55,8 @@ jobs:
           cd ./dist
           ls
           cd ..
-          echo "Inside ./dist/twilio-v5.1.1 "
-          cd ./dist/twilio-v5.1.1
+          echo "Inside ./dist/twilio-v5.1.2 "
+          cd ./dist/twilio-v5.1.2
           ls
           cd ..
           cd ..
