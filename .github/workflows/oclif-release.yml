@@ -51,9 +51,11 @@ jobs:
         if: ${{matrix.publish == 'homebrew'}}
         run: |
           ls
+          echo "Inside ./dist "
           cd ./dist
           ls
           cd ..
+          echo "Inside ./dist/twilio-v5.1.1 "
           cd ./dist/twilio-v5.1.1
           ls
           cd ..
