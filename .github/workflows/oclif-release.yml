@@ -48,7 +48,7 @@ jobs:
           repository: isha689/test
           token: ${{ secrets.ACCESS_TOKEN }}
           path: ./test
-          github-server-url: https://isha689.github.io/test
+          github-server-url: "https://isha689.github.io/test"
 
       - name: Publish assets to test repo and calculate sha of oclif dev pack
         id: sha256
