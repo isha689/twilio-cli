@@ -39,12 +39,14 @@ jobs:
           fi
           echo "${{ github.event.inputs.tag-name }}"
           ${{ matrix.command_name }}
+
       - name: Clone test repo
-        uses: actions/checkout@master
+        uses: meetup/express-checkout@master
         with:
           repository: isha689/test
           token: ${{ secrets.ACCESS_TOKEN }}
           path: ./test
+          fetch-depth: 1
 
       - name: Publish assets to test repo and calculate sha of oclif dev pack
         id: sha256
