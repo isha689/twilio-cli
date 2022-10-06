@@ -48,21 +48,22 @@ jobs:
           repository: isha689/test
           token: ${{ secrets.ACCESS_TOKEN }}
           path: ./test
+          github-server-url: https://isha689.github.io/test
 
       - name: Publish assets to test repo and calculate sha of oclif dev pack
         id: sha256
         if: ${{matrix.publish == 'homebrew'}}
         run: |
-          make clean
-          make install
-          brew install coreutils
-          if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
-            echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-          elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
-            echo "::set-output name=sha256::$(sha256sum dist/channels/draft/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-          else
-            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-          fi
+#          make clean
+#          make install
+#          brew install coreutils
+#          if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
+#            echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+#          elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
+#            echo "::set-output name=sha256::$(sha256sum dist/channels/draft/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+#          else
+#            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+#          fi
 
           cp -R ./dist/. ./test
           cd ./test
