@@ -39,16 +39,14 @@ jobs:
           fi
           echo "${{ github.event.inputs.tag-name }}"
           ${{ matrix.command_name }}
-          git config core.sparseCheckout true
-          git sparse-checkout init
 
       - name: Clone test repo
-        uses: actions/checkout@v3
-        with:
-          repository: isha689/test
-          token: ${{ secrets.ACCESS_TOKEN }}
-          path: ./test
-          github-server-url: "https://isha689.github.io/test"
+        run: |
+          git clone --filter=blob:none --no-checkout git@github.com:isha689/test.git
+          cd ./test
+          git sparse-checkout init --cone
+          git read-tree -mu HEAD
+          cd ..
 
       - name: Publish assets to test repo and calculate sha of oclif dev pack
         id: sha256
