@@ -43,10 +43,12 @@ jobs:
       - name: Clone test repo
         uses: meetup/express-checkout@master
         with:
-          repository: isha689/test
-          token: ${{ secrets.ACCESS_TOKEN }}
-          path: ./test
-          fetch-depth: 1
+          owner: isha689
+          repo: test
+          desitination: ./test
+          max_depth: 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Publish assets to test repo and calculate sha of oclif dev pack
         id: sha256
