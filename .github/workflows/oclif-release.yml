@@ -39,12 +39,12 @@ jobs:
           fi
           echo "${{ github.event.inputs.tag-name }}"
           ${{ matrix.command_name }}
-#      - name: Clone test repo
-#        uses: actions/checkout@master
-#        with:
-#          repository: isha689/test
-#          token: ${{ secrets.ACCESS_TOKEN }}
-#          path: ./test
+      - name: Clone test repo
+        uses: actions/checkout@master
+        with:
+          repository: isha689/test
+          token: ${{ secrets.ACCESS_TOKEN }}
+          path: ./test
 
       - name: Publish assets to test repo and calculate sha of oclif dev pack
         id: sha256
@@ -61,24 +61,24 @@ jobs:
           cd ..
           cd ..
 
-#          make clean
-#          make install
-#          brew install coreutils
-#          if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
-#            echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-#          elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
-#            echo "::set-output name=sha256::$(sha256sum dist/channels/draft/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-#          else
-#            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-#          fi
+          make clean
+          make install
+          brew install coreutils
+          if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
+            echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+          elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
+            echo "::set-output name=sha256::$(sha256sum dist/channels/draft/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+          else
+            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+          fi
 
-#          cp -R ./dist/. ./test
-#          cd ./test
-#          git add .
-#          git config user.name github-actions
-#          git config user.email github-actions@github.com
-#          git commit -am "Uploaded packages"
-#          git push
+          cp -R ./dist/. ./test
+          cd ./test
+          git add .
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "Uploaded packages"
+          git push
 
 #      - name: Configure AWS credentials from Test account
 #        uses: aws-actions/configure-aws-credentials@v1
