@@ -67,7 +67,7 @@ jobs:
           cp -R ./dist/. ./test
           cd ./test
           ls
-          git sparse-checkout set twilio-v5.0.2
+          git sparse-checkout set twilio-v5.0.3
           ls
           git add .
           git config user.name github-actions
