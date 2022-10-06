@@ -148,7 +148,7 @@
     "update": {
       "s3": {
         "xz": true,
-        "bucket": "twilio-cli-prod"
+        "host": "https://isha689.github.io/test"
       }
     },
     "helpClass": "./src/services/twilio-help/custom-help"
