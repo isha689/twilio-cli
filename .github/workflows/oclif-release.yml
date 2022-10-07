@@ -103,7 +103,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Github Pages
-        if: ${{steps.extract_branch.outputs.branch == 'main'}}
         run: source .github/scripts/trigger-and-wait.sh
         env:
           INPUT_OWNER: isha689
