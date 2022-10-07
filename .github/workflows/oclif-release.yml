@@ -27,7 +27,7 @@ jobs:
         include:
           - os: macos-latest
             asset_name: twilio-v${{ github.event.inputs.tag-name }}
-            command_name: npx oclif-dev pack --xz -t darwin-arm64,darwin-x64,linux-arm,linux-x64,win32-x64,win32-x86
+            command_name: npx oclif-dev pack --xz -t darwin-arm64
             publish: homebrew
     steps:
       - uses: actions/checkout@v2
@@ -96,6 +96,24 @@ jobs:
 #          else
 #            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
 #          fi
+
+  github-pages-release:
+    name: Deploy Github Pages of test Repo
+    needs: [ oclif-release ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Github Pages
+        if: ${{steps.extract_branch.outputs.branch == 'main'}}
+        run: source .github/scripts/trigger-and-wait.sh
+        env:
+          INPUT_OWNER: isha689
+          INPUT_REPO: test
+          INPUT_GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          INPUT_WORKFLOW_FILE_NAME: deploy-pages.yml
+          INPUT_WAITING_INTERVAL: 10
+          INPUT_INPUTS: '{ "version": "${{github.event.inputs.tag-name}}" }'
+          INPUT_PROPAGATE_FAILURE: true
+
   home-brew-release:
     name: Trigger homebrew release workflow
     runs-on: ubuntu-latest
