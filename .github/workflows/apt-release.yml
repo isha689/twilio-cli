@@ -50,23 +50,6 @@ jobs:
         git commit -am "Uploaded packages"
         git push https://${{ secrets.ACCESS_TOKEN }}@github.com/isha689/test.git
 
-  github-pages-release:
-    name: Deploy Github Pages of test Repo
-    needs: [ apt-build-release ]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout cli repo
-        uses: actions/checkout@v2
-      - name: Deploy Github Pages
-        run: source .github/scripts/trigger-and-wait.sh
-        env:
-          INPUT_OWNER: isha689
-          INPUT_REPO: test
-          INPUT_GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          INPUT_WORKFLOW_FILE_NAME: github-pages.yml
-          INPUT_WAITING_INTERVAL: 10
-          INPUT_PROPAGATE_FAILURE: true
-
   notify-complete-fail:
     if: ${{ failure() || cancelled() }}
     needs: [ apt-build-release ]
