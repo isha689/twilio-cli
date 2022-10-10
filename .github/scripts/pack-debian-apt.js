@@ -124,7 +124,6 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
       await qq.x(`gpg --digest-algo SHA512 --clearsign -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o InRelease Release`, {cwd: dist});
       await qq.x(`gpg --digest-algo SHA512 -abs -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o Release.gpg Release`, {cwd: dist});
     }
-    await qq.x(`cp ${dist} ${pjson.oclif.update.s3.host}/apt --recursive`);
   }
   // importing secret key
   const importGPG  = async() => {
