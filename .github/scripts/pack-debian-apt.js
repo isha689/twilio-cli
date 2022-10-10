@@ -87,7 +87,7 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
       // fetch existing Packages file which needs to be modified for new version
       // await qq.x(`aws s3 cp s3://${pjson.oclif.update.s3.bucket}/apt/Packages Packages`, {cwd: dist, reject: false});
       await qq.x('echo "adding public key"');
-      await qq.x('wget -qO- https://isha689.github.io/test/twilio_pub.asc | sudo apt-key add -',{cwd: dist});
+      await qq.x('wget -qO - https://isha689.github.io/test/twilio_pub.asc | sudo apt-key add -',{cwd: dist});
       await qq.x('echo "added public key"');
       await qq.x('ls');
       await qq.x('cd dist');
