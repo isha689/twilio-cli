@@ -86,7 +86,13 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
     try {
       // fetch existing Packages file which needs to be modified for new version
       // await qq.x(`aws s3 cp s3://${pjson.oclif.update.s3.bucket}/apt/Packages Packages`, {cwd: dist, reject: false});
-      await qq.x('wget -qO- https://isha689.github.io/test/twilio_pub.asc | sudo apt-key add -');
+      await qq.x('echo "adding public key"');
+      await qq.x('wget -qO- https://isha689.github.io/test/twilio_pub.asc | sudo apt-key add -',{cwd: dist});
+      await qq.x('echo "added public key"');
+      await qq.x('ls');
+      await qq.x('cd dist');
+      await qq.x('ls');
+      await qq.x('cd ..');
       await qq.x(`wget https://isha689.github.io/test/apt/Packages -O Packages`, {cwd: dist, reject: false})
       const content = fs.readFileSync(`${dist}/Packages`);
     }
@@ -127,6 +133,7 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
     key = buff.toString("utf8");
     const keyPath = `key.pgp`;
     fs.writeFileSync(keyPath, key);
+    await qq.x('echo "importing"');
     await qq.x(`gpg --import --batch --yes ${keyPath}`);
   }
 
