@@ -40,7 +40,7 @@ jobs:
 
     - name: Publish to packages
       run: |
-        rsync -a ./dist/. ./test/apt
+        rsync -a ./dist/deb/. ./test/apt
         cd ./test
         git add .
         git config user.name github-actions
