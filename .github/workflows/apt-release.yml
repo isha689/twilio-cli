@@ -32,21 +32,23 @@ jobs:
         node .github/scripts/pack-debian-apt.js x64,arm
 
     - name: Clone test repo
-      uses: actions/checkout@master
-      with:
-        repository: isha689/test
-        token: ${{ secrets.ACCESS_TOKEN }}
-        path: ./test
+      run: |
+        rm -r test
+        git clone --filter=blob:none --no-checkout https://${{ secrets.ACCESS_TOKEN }}@github.com/isha689/test.git
+        cd ./test
+        git sparse-checkout init --cone
+        git read-tree -mu HEAD
+        cd ..
 
     - name: Publish to packages
       run: |
         rsync -a ./dist/deb/. ./test/apt
         cd ./test
-        git add .
+        git add . --sparse
         git config user.name github-actions
         git config user.email github-actions@github.com
         git commit -am "Uploaded packages"
-        git push
+        git push https://${{ secrets.ACCESS_TOKEN }}@github.com/isha689/test.git
   notify-complete-fail:
     if: ${{ failure() || cancelled() }}
     needs: [ apt-build-release ]
