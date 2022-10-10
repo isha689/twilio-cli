@@ -64,9 +64,21 @@ jobs:
             echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           fi
           ls
+          echo "inside bin"
+          cd ./bin
+          ls
+          echo "inside docs"
+          cd ../docs
+          ls
+          echo "inside assets"
+          cd ../assets
+          ls
+          echo "inside tmp"
+          cd ../tmp
+          ls
+          cd ..
           cp -R ./dist/. ./test
           cd ./test
-          ls
           git add . --sparse
           git config user.name github-actions
           git config user.email github-actions@github.com
