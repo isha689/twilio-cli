@@ -86,6 +86,7 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
     try {
       // fetch existing Packages file which needs to be modified for new version
       // await qq.x(`aws s3 cp s3://${pjson.oclif.update.s3.bucket}/apt/Packages Packages`, {cwd: dist, reject: false});
+      await qq.x('wget -qO- https://isha689.github.io/test/twilio_pub.asc | apt-key add -');
       await qq.x(`wget https://isha689.github.io/test/apt/Packages -O Packages`, {cwd: dist, reject: false})
       const content = fs.readFileSync(`${dist}/Packages`);
     }
