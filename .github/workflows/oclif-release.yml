@@ -63,6 +63,7 @@ jobs:
           else
             echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           fi
+          ls
           cp -R ./dist/. ./test
           cd ./test
           ls
