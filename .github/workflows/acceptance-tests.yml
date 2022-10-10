@@ -5,12 +5,7 @@ on:
     # wait for Platform Executable Release to complete
     workflows:
       [
-        "Windows Executable Release",
         "Oclif Release",
-        "Apt Release",
-        "Macos Executable Release",
-        "Debian Executable Release",
-        "RPM Build",
       ]
     branches: [main]
     types:
