@@ -27,9 +27,6 @@ jobs:
         with:
           spec_file: .github/rpm/twilio.spec
           sources: |
-          if: contains("draft",${{ steps.get-tag.outputs.TAG_NAME }} )
-            dist/channels/draft/twilio-v${{ steps.get-tag.outputs.TAG_NAME }}/twilio-v${{ steps.get-tag.outputs.TAG_NAME }}-linux-x64.tar.gz
-          else:
             dist/twilio-v${{ steps.get-tag.outputs.TAG_NAME }}/twilio-v${{ steps.get-tag.outputs.TAG_NAME }}-linux-x64.tar.gz
           variables: |
             _version=${{ steps.get-tag.outputs.TAG_NAME }}
