@@ -9,8 +9,8 @@ on:
         description: 'Tag to be released in Homebrew (Same as CLI latest tag name)'
         required: true
       formula:
-          description: 'Formula to release in homebrew'
-          default: twilio
+        description: 'Formula to release in homebrew'
+        default: twilio
       pre-release:
         description: 'Homebrew release type'
         default: 'false'
@@ -37,7 +37,6 @@ jobs:
           if [ "$RUNNER_OS" == "macOS" ]; then
             brew install makensis
           fi
-          echo "${{ github.event.inputs.tag-name }}"
           ${{ matrix.command_name }}
 
       - name: Clone test repo
@@ -49,7 +48,7 @@ jobs:
           git read-tree -mu HEAD
           cd ..
 
-      - name: Publish assets to test repo and calculate sha of oclif dev pack
+      - name: Calculate sha of oclif dev pack
         id: sha256
         if: ${{matrix.publish == 'homebrew'}}
         run: |
@@ -63,55 +62,31 @@ jobs:
           else
             echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           fi
-          ls
-          echo "inside bin"
-          cd ./bin
-          ls
-          echo "inside docs"
-          cd ../docs
-          ls
-          echo "inside assets"
-          cd ../assets
-          ls
-          echo "inside tmp"
-          cd ../tmp
-          ls
-          cd ../tmp/twilio
-          ls
-          cd ..
-          cd ..
+
+      - name: Push Changes to test Repo
+        run: |
           cp -R ./dist/. ./test
+          if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
+            cp ./dist/channels/rc/twilio-v${{ github.event.inputs.tag-name }}/twilio-v${{ github.event.inputs.tag-name }}-win32-x64.tar.xz ./test/channels/rc/twilio-win32-x64.tar.xz
+            cp ./dist/channels/rc/twilio-v${{ github.event.inputs.tag-name }}/twilio-v${{ github.event.inputs.tag-name }}-win32-x86.tar.xz ./test/channels/rc/twilio-win32-x86.tar.xz
+          elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
+            cp ./dist/channels/draft/twilio-v${{ github.event.inputs.tag-name }}/twilio-v${{ github.event.inputs.tag-name }}-win32-x64.tar.xz ./test/channels/draft/twilio-win32-x64.tar.xz
+            cp ./dist/channels/draft/twilio-v${{ github.event.inputs.tag-name }}/twilio-v${{ github.event.inputs.tag-name }}-win32-x86.tar.xz ./test/channels/draft/twilio-win32-x86.tar.xz
+          else
+            cp ./dist/twilio-v${{ github.event.inputs.tag-name }}/twilio-v${{ github.event.inputs.tag-name }}-win32-x64.tar.xz ./test/twilio-win32-x64.tar.xz
+            cp ./dist/twilio-v${{ github.event.inputs.tag-name }}/twilio-v${{ github.event.inputs.tag-name }}-win32-x86.tar.xz ./test/twilio-win32-x86.tar.xz
+          fi
           cd ./test
           git add . --sparse
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git commit -am "Uploaded packages"
-          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/isha689/test.git
-#          git sparse-checkout disable
-
-
-#      - name: Configure AWS credentials from Test account
-#        uses: aws-actions/configure-aws-credentials@v1
-#        with:
-#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
-#          aws-region: us-east-1
-#      - name: Publish assests to s3 and calculate sha of oclif dev pack
-#        id: sha256
-#        if: ${{matrix.publish == 'homebrew'}}
-#        run: |
-#          make clean
-#          make install
-#          npx oclif-dev publish
-#          brew install coreutils
-#          if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
-#            echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-#          elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
-#            echo "::set-output name=sha256::$(sha256sum dist/channels/draft/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-#          else
-#            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
-#          fi
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "There are changes to commit.";
+            git commit -am "Uploaded packages"
+            git push https://${{ secrets.ACCESS_TOKEN }}@github.com/isha689/test.git
+          else
+            echo "No changes to commit";
+          fi
 
   github-pages-release:
     name: Deploy Github Pages of test Repo
@@ -171,7 +146,7 @@ jobs:
           INPUT_PROPAGATE_FAILURE: true
   notify-complete-fail:
     if: ${{ failure() || cancelled() }}
-    needs: [ home-brew-release ]
+    needs: [ home-brew-release , scoop-release ]
     name: Notify Release Failed
     runs-on: ubuntu-latest
     steps:
