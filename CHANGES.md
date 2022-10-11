@@ -1,3 +1,141 @@
+## [5.1.0](https://github.com/isha689/twilio-cli/compare/v5.0.0...5.1.0) (2022-10-10)
+
+
+### Library - Test
+
+* pushing to "packages" repo ([60c6e4c](https://github.com/isha689/twilio-cli/commit/60c6e4ce7ad4d72dfd4b83cfd450c629930f2fa1))
+* pushing to "test" repo ([b1ebbf0](https://github.com/isha689/twilio-cli/commit/b1ebbf0f14bca7a9cc3c98482d1174fb6d93fc0d))
+* running on ubuntu ([3099b6b](https://github.com/isha689/twilio-cli/commit/3099b6bb4828bfef59c073c43aa1faafe6429c49))
+* running on ubuntu ([c2a1efe](https://github.com/isha689/twilio-cli/commit/c2a1efe10ad4569c24fe25c4f943c29ead7fb58d))
+
+
+### Library - Fixes
+
+* added checkout cli repo ([a8f4a6d](https://github.com/isha689/twilio-cli/commit/a8f4a6d5b9b4b0f9d414359dc5786a738405cc12))
+* changed version ([a6dda20](https://github.com/isha689/twilio-cli/commit/a6dda20cdf885f60339dd387b67cb44785b718a3))
+* changing workflow file name ([0bfd24a](https://github.com/isha689/twilio-cli/commit/0bfd24a29d34e4c8fb4b4b6a8a76d6a5b7928348))
+* generating tarballs for all platforms ([af4520a](https://github.com/isha689/twilio-cli/commit/af4520a9d0b1e425d2bc03f5c2e929acf4b94ec6))
+* semantic release ([631102f](https://github.com/isha689/twilio-cli/commit/631102feeca18e46601998c1ca73d1b14b509857))
+
+
+### Library - Chores
+
+* add packages ([ef1894b](https://github.com/isha689/twilio-cli/commit/ef1894b3cd6bbc3be5eef64f17b86b775a85f0ab))
+* added all the targets ([0709f95](https://github.com/isha689/twilio-cli/commit/0709f95913ab87774a08746551074d9053af36a1))
+* added comments ([f136529](https://github.com/isha689/twilio-cli/commit/f13652949bf3ae58d30c782a737769b124401259))
+* added github pages deploy ([c1cf0c4](https://github.com/isha689/twilio-cli/commit/c1cf0c4b23bdb25617ee3cdd36b65d92a0d3af78))
+* added gpg key ([567b47f](https://github.com/isha689/twilio-cli/commit/567b47fa3ee2ba73f0e647f4f8328808ff6d4863))
+* added ls ([67745f2](https://github.com/isha689/twilio-cli/commit/67745f27eca4c07bdd8f3561a29fe5cf873191c0))
+* added public key ([0658fe3](https://github.com/isha689/twilio-cli/commit/0658fe36f188c75226b3ea73f971e7ca009b3325))
+* added public key ([87ac423](https://github.com/isha689/twilio-cli/commit/87ac423db552c23acc073f71af905db252a15875))
+* added workflow runs for acceptance testing ([0365af1](https://github.com/isha689/twilio-cli/commit/0365af1268ef65bcbfce4262bb095b6969def04e))
+* changed version ([9ea7cc0](https://github.com/isha689/twilio-cli/commit/9ea7cc05cdd510c50e6b6a8f7cea5147aef8d056))
+* changing repo name ([4118ebf](https://github.com/isha689/twilio-cli/commit/4118ebf693a46387dc4027b3363e3aa52edcb330))
+* changing version ([5723683](https://github.com/isha689/twilio-cli/commit/57236839bf74bfee44f136e4f16ef708afe25d63))
+* changing version ([000a473](https://github.com/isha689/twilio-cli/commit/000a473580f5817a6eff71b3664b051164c5a014))
+* ls ([60b432d](https://github.com/isha689/twilio-cli/commit/60b432d79dbdaadabc0b4a5ae74bc6768a19289e))
+* reducing cloning time ([61e2e28](https://github.com/isha689/twilio-cli/commit/61e2e28ad44567735b42450503631bf2f4b4ddbd))
+* reducing targets ([06ce4b9](https://github.com/isha689/twilio-cli/commit/06ce4b92e86738bd07ec317f6b3f6090ff21b1cd))
+* **release:** set `package.json` to 5.0.1 [skip ci] ([aee1980](https://github.com/isha689/twilio-cli/commit/aee1980c437422ff5655bf5bab2323eaa7e44154))
+* **release:** set `package.json` to 5.0.1 [skip ci] ([71480d3](https://github.com/isha689/twilio-cli/commit/71480d3114910417ce656a55690780a95ba8f055))
+* removed public key ([c3974f1](https://github.com/isha689/twilio-cli/commit/c3974f119f6b88dd8a3aa30fbf5dc36c34761414))
+* removing cp ([f135228](https://github.com/isha689/twilio-cli/commit/f135228f5f1439e91b90aa27990401026df8aba5))
+* removing xz true ([7252431](https://github.com/isha689/twilio-cli/commit/725243181210f1ac853a1a89a19e558e73bc1afd))
+* reverting changes ([f53a51a](https://github.com/isha689/twilio-cli/commit/f53a51abaf3292f9082e881a9b7a3a9b275936b5))
+* running acceptance tests after oclif-release ([e7f2d76](https://github.com/isha689/twilio-cli/commit/e7f2d76c6c7e1b449912a9eec2b1342d17ac2ab4))
+* test ([2c324f6](https://github.com/isha689/twilio-cli/commit/2c324f61ddbc3289f6153f97e6eec4fe63a0ba5f))
+
+oaiFeat### [5.0.1](https://github.com/isha689/twilio-cli/compare/v5.0.0...5.0.1) (2022-10-10)
+
+
+### Library - Test
+
+* pushing to "packages" repo ([60c6e4c](https://github.com/isha689/twilio-cli/commit/60c6e4ce7ad4d72dfd4b83cfd450c629930f2fa1))
+* pushing to "test" repo ([b1ebbf0](https://github.com/isha689/twilio-cli/commit/b1ebbf0f14bca7a9cc3c98482d1174fb6d93fc0d))
+* running on ubuntu ([3099b6b](https://github.com/isha689/twilio-cli/commit/3099b6bb4828bfef59c073c43aa1faafe6429c49))
+* running on ubuntu ([c2a1efe](https://github.com/isha689/twilio-cli/commit/c2a1efe10ad4569c24fe25c4f943c29ead7fb58d))
+
+
+### Library - Fixes
+
+* added checkout cli repo ([a8f4a6d](https://github.com/isha689/twilio-cli/commit/a8f4a6d5b9b4b0f9d414359dc5786a738405cc12))
+* changed version ([a6dda20](https://github.com/isha689/twilio-cli/commit/a6dda20cdf885f60339dd387b67cb44785b718a3))
+* changing workflow file name ([0bfd24a](https://github.com/isha689/twilio-cli/commit/0bfd24a29d34e4c8fb4b4b6a8a76d6a5b7928348))
+* generating tarballs for all platforms ([af4520a](https://github.com/isha689/twilio-cli/commit/af4520a9d0b1e425d2bc03f5c2e929acf4b94ec6))
+* semantic release ([631102f](https://github.com/isha689/twilio-cli/commit/631102feeca18e46601998c1ca73d1b14b509857))
+
+
+### Library - Chores
+
+* add packages ([ef1894b](https://github.com/isha689/twilio-cli/commit/ef1894b3cd6bbc3be5eef64f17b86b775a85f0ab))
+* added all the targets ([0709f95](https://github.com/isha689/twilio-cli/commit/0709f95913ab87774a08746551074d9053af36a1))
+* added comments ([f136529](https://github.com/isha689/twilio-cli/commit/f13652949bf3ae58d30c782a737769b124401259))
+* added github pages deploy ([c1cf0c4](https://github.com/isha689/twilio-cli/commit/c1cf0c4b23bdb25617ee3cdd36b65d92a0d3af78))
+* added gpg key ([567b47f](https://github.com/isha689/twilio-cli/commit/567b47fa3ee2ba73f0e647f4f8328808ff6d4863))
+* added ls ([67745f2](https://github.com/isha689/twilio-cli/commit/67745f27eca4c07bdd8f3561a29fe5cf873191c0))
+* added public key ([0658fe3](https://github.com/isha689/twilio-cli/commit/0658fe36f188c75226b3ea73f971e7ca009b3325))
+* added public key ([87ac423](https://github.com/isha689/twilio-cli/commit/87ac423db552c23acc073f71af905db252a15875))
+* added workflow runs for acceptance testing ([0365af1](https://github.com/isha689/twilio-cli/commit/0365af1268ef65bcbfce4262bb095b6969def04e))
+* changed version ([9ea7cc0](https://github.com/isha689/twilio-cli/commit/9ea7cc05cdd510c50e6b6a8f7cea5147aef8d056))
+* changing repo name ([4118ebf](https://github.com/isha689/twilio-cli/commit/4118ebf693a46387dc4027b3363e3aa52edcb330))
+* changing version ([5723683](https://github.com/isha689/twilio-cli/commit/57236839bf74bfee44f136e4f16ef708afe25d63))
+* changing version ([000a473](https://github.com/isha689/twilio-cli/commit/000a473580f5817a6eff71b3664b051164c5a014))
+* ls ([60b432d](https://github.com/isha689/twilio-cli/commit/60b432d79dbdaadabc0b4a5ae74bc6768a19289e))
+* reducing cloning time ([61e2e28](https://github.com/isha689/twilio-cli/commit/61e2e28ad44567735b42450503631bf2f4b4ddbd))
+* reducing targets ([06ce4b9](https://github.com/isha689/twilio-cli/commit/06ce4b92e86738bd07ec317f6b3f6090ff21b1cd))
+* **release:** set `package.json` to 5.0.1 [skip ci] ([71480d3](https://github.com/isha689/twilio-cli/commit/71480d3114910417ce656a55690780a95ba8f055))
+* removed public key ([c3974f1](https://github.com/isha689/twilio-cli/commit/c3974f119f6b88dd8a3aa30fbf5dc36c34761414))
+* removing cp ([f135228](https://github.com/isha689/twilio-cli/commit/f135228f5f1439e91b90aa27990401026df8aba5))
+* removing xz true ([7252431](https://github.com/isha689/twilio-cli/commit/725243181210f1ac853a1a89a19e558e73bc1afd))
+* reverting changes ([f53a51a](https://github.com/isha689/twilio-cli/commit/f53a51abaf3292f9082e881a9b7a3a9b275936b5))
+* running acceptance tests after oclif-release ([e7f2d76](https://github.com/isha689/twilio-cli/commit/e7f2d76c6c7e1b449912a9eec2b1342d17ac2ab4))
+* test ([2c324f6](https://github.com/isha689/twilio-cli/commit/2c324f61ddbc3289f6153f97e6eec4fe63a0ba5f))
+
+### [5.0.1](https://github.com/isha689/twilio-cli/compare/v5.0.0...5.0.1) (2022-10-10)
+
+
+### Library - Test
+
+* pushing to "packages" repo ([60c6e4c](https://github.com/isha689/twilio-cli/commit/60c6e4ce7ad4d72dfd4b83cfd450c629930f2fa1))
+* pushing to "test" repo ([b1ebbf0](https://github.com/isha689/twilio-cli/commit/b1ebbf0f14bca7a9cc3c98482d1174fb6d93fc0d))
+* running on ubuntu ([3099b6b](https://github.com/isha689/twilio-cli/commit/3099b6bb4828bfef59c073c43aa1faafe6429c49))
+* running on ubuntu ([c2a1efe](https://github.com/isha689/twilio-cli/commit/c2a1efe10ad4569c24fe25c4f943c29ead7fb58d))
+
+
+### Library - Fixes
+
+* added checkout cli repo ([a8f4a6d](https://github.com/isha689/twilio-cli/commit/a8f4a6d5b9b4b0f9d414359dc5786a738405cc12))
+* changed version ([a6dda20](https://github.com/isha689/twilio-cli/commit/a6dda20cdf885f60339dd387b67cb44785b718a3))
+* changing workflow file name ([0bfd24a](https://github.com/isha689/twilio-cli/commit/0bfd24a29d34e4c8fb4b4b6a8a76d6a5b7928348))
+* generating tarballs for all platforms ([af4520a](https://github.com/isha689/twilio-cli/commit/af4520a9d0b1e425d2bc03f5c2e929acf4b94ec6))
+* semantic release ([631102f](https://github.com/isha689/twilio-cli/commit/631102feeca18e46601998c1ca73d1b14b509857))
+
+
+### Library - Chores
+
+* add packages ([ef1894b](https://github.com/isha689/twilio-cli/commit/ef1894b3cd6bbc3be5eef64f17b86b775a85f0ab))
+* added all the targets ([0709f95](https://github.com/isha689/twilio-cli/commit/0709f95913ab87774a08746551074d9053af36a1))
+* added comments ([f136529](https://github.com/isha689/twilio-cli/commit/f13652949bf3ae58d30c782a737769b124401259))
+* added github pages deploy ([c1cf0c4](https://github.com/isha689/twilio-cli/commit/c1cf0c4b23bdb25617ee3cdd36b65d92a0d3af78))
+* added gpg key ([567b47f](https://github.com/isha689/twilio-cli/commit/567b47fa3ee2ba73f0e647f4f8328808ff6d4863))
+* added ls ([67745f2](https://github.com/isha689/twilio-cli/commit/67745f27eca4c07bdd8f3561a29fe5cf873191c0))
+* added public key ([0658fe3](https://github.com/isha689/twilio-cli/commit/0658fe36f188c75226b3ea73f971e7ca009b3325))
+* added public key ([87ac423](https://github.com/isha689/twilio-cli/commit/87ac423db552c23acc073f71af905db252a15875))
+* added workflow runs for acceptance testing ([0365af1](https://github.com/isha689/twilio-cli/commit/0365af1268ef65bcbfce4262bb095b6969def04e))
+* changed version ([9ea7cc0](https://github.com/isha689/twilio-cli/commit/9ea7cc05cdd510c50e6b6a8f7cea5147aef8d056))
+* changing repo name ([4118ebf](https://github.com/isha689/twilio-cli/commit/4118ebf693a46387dc4027b3363e3aa52edcb330))
+* changing version ([5723683](https://github.com/isha689/twilio-cli/commit/57236839bf74bfee44f136e4f16ef708afe25d63))
+* changing version ([000a473](https://github.com/isha689/twilio-cli/commit/000a473580f5817a6eff71b3664b051164c5a014))
+* ls ([60b432d](https://github.com/isha689/twilio-cli/commit/60b432d79dbdaadabc0b4a5ae74bc6768a19289e))
+* reducing cloning time ([61e2e28](https://github.com/isha689/twilio-cli/commit/61e2e28ad44567735b42450503631bf2f4b4ddbd))
+* reducing targets ([06ce4b9](https://github.com/isha689/twilio-cli/commit/06ce4b92e86738bd07ec317f6b3f6090ff21b1cd))
+* removed public key ([c3974f1](https://github.com/isha689/twilio-cli/commit/c3974f119f6b88dd8a3aa30fbf5dc36c34761414))
+* removing cp ([f135228](https://github.com/isha689/twilio-cli/commit/f135228f5f1439e91b90aa27990401026df8aba5))
+* removing xz true ([7252431](https://github.com/isha689/twilio-cli/commit/725243181210f1ac853a1a89a19e558e73bc1afd))
+* reverting changes ([f53a51a](https://github.com/isha689/twilio-cli/commit/f53a51abaf3292f9082e881a9b7a3a9b275936b5))
+* running acceptance tests after oclif-release ([e7f2d76](https://github.com/isha689/twilio-cli/commit/e7f2d76c6c7e1b449912a9eec2b1342d17ac2ab4))
+* test ([2c324f6](https://github.com/isha689/twilio-cli/commit/2c324f61ddbc3289f6153f97e6eec4fe63a0ba5f))
+
 ## [5.0.0](https://github.com/twilio/twilio-cli/compare/4.2.0...5.0.0) (2022-09-19)
 
 
