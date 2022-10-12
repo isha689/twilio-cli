@@ -25,7 +25,7 @@ jobs:
       matrix:
         include:
           - os: macos-latest
-            asset_name: twilio
+            asset_name: twilio-v${{ github.event.inputs.tag-name }}
             command_name: npx oclif-dev pack --xz -t darwin-arm64
             publish: homebrew
     steps:
@@ -37,14 +37,50 @@ jobs:
             brew install makensis
           fi
           ${{ matrix.command_name }}
-
-      - name: Publish artifacts to release assets and calculate sha of oclif dev pack
-        id: sha256
-        if: ${{matrix.publish == 'homebrew'}}
+      - name: Upload binaries to release - darwin-arm64.gz
+        if: always()
         run: |
-          cd ./dist
-          ls
-          cd..
+          node .github/scripts/update-platform-executables.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE: dist/twilio-v${{github.event.inputs.tag-name}}/twilio-v${{github.event.inputs.tag-name}}-darwin-arm64.tar.gz
+          ASSET_NAME: twilio-${{github.event.inputs.tag-name}}-darwin-arm64.tar.gz
+          TAG_NAME: ${{github.event.inputs.tag-name}}
+          REPO_NAME: ${{ github.repository }}
+      - name: Upload binaries to release - darwin-arm64.xz
+        if: always()
+        run: |
+          node .github/scripts/update-platform-executables.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE: dist/twilio-v${{github.event.inputs.tag-name}}/twilio-v${{github.event.inputs.tag-name}}-darwin-arm64.tar.xz
+          ASSET_NAME: twilio-${{github.event.inputs.tag-name}}-darwin-arm64.tar.xz
+          TAG_NAME: ${{github.event.inputs.tag-name}}
+          REPO_NAME: ${{ github.repository }}
+      - name: Upload version file to release
+        if: always()
+        run: |
+          node .github/scripts/update-platform-executables.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE: dist/version
+          ASSET_NAME: version
+          TAG_NAME: ${{github.event.inputs.tag-name}}
+          REPO_NAME: ${{ github.repository }}
+      - name: Upload darwin-arm64 file to release
+        if: always()
+        run: |
+          node .github/scripts/update-platform-executables.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE: dist/darwin-arm64
+          ASSET_NAME: darwin-arm64
+          TAG_NAME: ${{github.event.inputs.tag-name}}
+          REPO_NAME: ${{ github.repository }}
+#      - name: Calculate sha of oclif dev pack
+#        id: sha256
+#        if: ${{matrix.publish == 'homebrew'}}
+#        run: |
 #          make clean
 #          make install
 #          brew install coreutils
