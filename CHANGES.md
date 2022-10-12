@@ -1,3 +1,10 @@
+### [5.1.3](https://github.com/isha689/twilio-cli/compare/5.1.2...5.1.3) (2022-10-12)
+
+
+### Library - Fixes
+
+* trigger release ([8a7670a](https://github.com/isha689/twilio-cli/commit/8a7670a43159c3275161200c09d9e1d066edf8e0))
+
 ### [5.1.2](https://github.com/isha689/twilio-cli/compare/5.1.1...5.1.2) (2022-10-12)
 
 
