@@ -1,3 +1,25 @@
+## [5.1.0](https://github.com/isha689/twilio-cli/compare/v5.0.0...5.1.0) (2022-10-12)
+
+
+### Library - Chores
+
+* **release:** set `package.json` to 5.1.0 [skip ci] ([5a240b3](https://github.com/isha689/twilio-cli/commit/5a240b34de977a41b92a09d13524a439249bfeeb)), closes [#469](https://github.com/isha689/twilio-cli/issues/469)
+* run acceptance test on macos x64 executable ([#472](https://github.com/isha689/twilio-cli/issues/472)) ([12097b3](https://github.com/isha689/twilio-cli/commit/12097b3b37fc4ed2e6ff6dec97f90d97f324d7a3))
+
+
+### Library - Fixes
+
+* changing version ([da9d15e](https://github.com/isha689/twilio-cli/commit/da9d15e6f9d5cb4bd349f3a70f1ca3814cb98fd4))
+* changing version ([f4be137](https://github.com/isha689/twilio-cli/commit/f4be137ac7ea418f910acba2ab7cc1cf39bbbbf7))
+* checking files generated ([9dd3863](https://github.com/isha689/twilio-cli/commit/9dd3863734b2140853cac7e9059ed1776402574a))
+* getting version ([d39f8b0](https://github.com/isha689/twilio-cli/commit/d39f8b0d0e07f7f864358323ca6111ea6fc54b1d))
+* oclif workflow fix ([0184e3b](https://github.com/isha689/twilio-cli/commit/0184e3b49b4c6e9bd68476e4c10424ac71740ce6))
+* setup github actions in forked repo ([6ef35f7](https://github.com/isha689/twilio-cli/commit/6ef35f710af3ceb83c9c1abdea1474f35d619d73))
+* specifying targets for oclif-dev pack ([#471](https://github.com/isha689/twilio-cli/issues/471)) ([f0dfea5](https://github.com/isha689/twilio-cli/commit/f0dfea5a88e61d26f03a6ffe3b4cd3b50f831969))
+* test ([dd2e581](https://github.com/isha689/twilio-cli/commit/dd2e581fdeed11844e9b25ae1f0b84aac3209cb2))
+* uploading files to release assets ([7ab7ca0](https://github.com/isha689/twilio-cli/commit/7ab7ca0f9e9f88dfad6ff59a11faf408be417bfd))
+* uploading files to release assets ([03b8100](https://github.com/isha689/twilio-cli/commit/03b810022bc183a73ad1f506c745513a15257892))
+
 ## [5.1.0](https://github.com/twilio/twilio-cli/compare/5.0.0...5.1.0) (2022-10-06)
 
 
