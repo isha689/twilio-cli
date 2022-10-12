@@ -72,7 +72,7 @@ jobs:
         run: node .github/scripts/trigger-workflow.js
         env:
           WORKFLOW_NAME: '.github/workflows/cli-test-npm.yml'
-          REPO_NAME: twilio/twilio-cli
+          REPO_NAME: isha689/twilio-cli
           REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           BRANCH_NAME: ${{steps.extract_branch.outputs.branch}}
           INPUTS: '{ "version": "${{ steps.semantic-release-draft.outputs.TAG_NAME }}" }'
@@ -88,7 +88,7 @@ jobs:
         env:
           TAG_NAME: ${{steps.semantic-release-draft.outputs.TAG_NAME}}
           RELEASE_BODY: ${{github.event.inputs.change-log}}
-          REPO_NAME: twilio/twilio-cli
+          REPO_NAME: isha689/twilio-cli
           REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           INPUTS: '{ "tag-name": "${{needs.release.outputs.draft-tag-name}}" }'
@@ -109,7 +109,7 @@ jobs:
         run: node .github/scripts/trigger-workflow.js
         env:
           WORKFLOW_NAME: 'oclif-release.yml'
-          REPO_NAME: twilio/twilio-cli
+          REPO_NAME: isha689/twilio-cli
           REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           BRANCH_NAME: ${{steps.extract_branch.outputs.branch}}
           INPUTS: '{ "home-brew-branch": "${{github.event.inputs.homebrew-branch}}", "tag-name": "${{needs.release.outputs.draft-tag-name}}", "formula": "twiliodraft", "pre-release": "${{github.event.inputs.homebrew-prerelease}}"}'
@@ -154,14 +154,14 @@ jobs:
         run: node .github/scripts/trigger-workflow.js
         env:
           WORKFLOW_NAME: 'docker-release.yml'
-          REPO_NAME: twilio/twilio-cli
+          REPO_NAME: isha689/twilio-cli
           REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           BRANCH_NAME: ${{steps.extract_branch.outputs.branch}}
   platform-executables-release:
     runs-on: ubuntu-latest
     needs: [ release ]
     env:
-        REPO_NAME: twilio/twilio-cli
+        REPO_NAME: isha689/twilio-cli
         REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
     strategy:
       matrix:
