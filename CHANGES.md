@@ -1,3 +1,10 @@
+### [5.1.2](https://github.com/isha689/twilio-cli/compare/5.1.1...5.1.2) (2022-10-12)
+
+
+### Library - Fixes
+
+* fixed url ([dea46a2](https://github.com/isha689/twilio-cli/commit/dea46a2fd461338fe9ed8832b946928af2cbc332))
+
 ### [5.1.1](https://github.com/isha689/twilio-cli/compare/5.1.0...5.1.1) (2022-10-12)
 
 
