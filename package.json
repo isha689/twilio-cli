@@ -148,7 +148,7 @@
     "update": {
       "s3": {
         "xz": true,
-        "host": "https://github.com/isha689/twilio-cli/releases/download/$(node -p -e \"require('./package.json').version/")"
+        "host": "https://github.com/isha689/twilio-cli/releases/download/$(node -p -e \"require('./package.json').version\")"
       }
     },
     "helpClass": "./src/services/twilio-help/custom-help"
