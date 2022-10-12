@@ -88,6 +88,7 @@ jobs:
           ASSET_NAME: version
           TAG_NAME: ${{github.event.inputs.tag-name}}
           REPO_NAME: ${{ github.repository }}
+          OVERWRITE: true
       - name: Upload darwin-arm64 file to release
         if: always()
         run: |
