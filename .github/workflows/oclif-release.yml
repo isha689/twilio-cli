@@ -113,7 +113,6 @@ jobs:
 #          else
 #            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
 #          fi
-#making some changes to trigger the release
 #  home-brew-release:
 #    name: Trigger homebrew release workflow
 #    runs-on: ubuntu-latest
