@@ -5,6 +5,18 @@
 
 * trigger release ([ded25eb](https://github.com/isha689/twilio-cli/commit/ded25ebb704f347cc4f868f4170eb0b84251293d))
 
+
+### Library - Chores
+
+* **release:** set `package.json` to 5.1.1 [skip ci] ([d2382f4](https://github.com/isha689/twilio-cli/commit/d2382f409eebc4b7253b78495c2c6e0ae4740aaf))
+
+### [5.1.1](https://github.com/isha689/twilio-cli/compare/5.1.0...5.1.1) (2022-10-12)
+
+
+### Library - Fixes
+
+* trigger release ([ded25eb](https://github.com/isha689/twilio-cli/commit/ded25ebb704f347cc4f868f4170eb0b84251293d))
+
 ## [5.1.0](https://github.com/isha689/twilio-cli/compare/v5.0.0...5.1.0) (2022-10-12)
 
 
