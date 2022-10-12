@@ -37,6 +37,26 @@ jobs:
             brew install makensis
           fi
           ${{ matrix.command_name }}
+      - name: Upload binaries to release - tar.xz
+        if: always()
+        run: |
+          node .github/scripts/update-platform-executables.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE: dist/twilio-v${{github.event.inputs.tag-name}}/twilio-v${{github.event.inputs.tag-name}}.tar.xz
+          ASSET_NAME: twilio-${{github.event.inputs.tag-name}}.tar.xz
+          TAG_NAME: ${{github.event.inputs.tag-name}}
+          REPO_NAME: ${{ github.repository }}
+      - name: Upload binaries to release - tar.gz
+        if: always()
+        run: |
+          node .github/scripts/update-platform-executables.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILE: dist/twilio-v${{github.event.inputs.tag-name}}/twilio-v${{github.event.inputs.tag-name}}.tar.gz
+          ASSET_NAME: twilio-${{github.event.inputs.tag-name}}.tar.gz
+          TAG_NAME: ${{github.event.inputs.tag-name}}
+          REPO_NAME: ${{ github.repository }}
       - name: Upload binaries to release - darwin-arm64.gz
         if: always()
         run: |

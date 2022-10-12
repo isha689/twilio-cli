@@ -1,6 +1,6 @@
 {
   "name": "twilio-cli",
-  "version": "5.1.0",
+  "version": "5.0.1",
   "description": "Unleash the power of Twilio from your command prompt. Visit https://twil.io/cli for documentation.",
   "keywords": [
     "oclif"
@@ -148,7 +148,7 @@
     "update": {
       "s3": {
         "xz": true,
-        "host": "https://github.com/isha689/twilio-cli/releases/download/$version"
+        "host": "https://github.com/isha689/twilio-cli/releases/download/${version}"
       }
     },
     "helpClass": "./src/services/twilio-help/custom-help"
