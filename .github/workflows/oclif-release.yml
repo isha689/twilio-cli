@@ -37,6 +37,7 @@ jobs:
             brew install makensis
           fi
           ${{ matrix.command_name }}
+
       - name: Upload binaries to release - tar.xz
         if: always()
         run: |
