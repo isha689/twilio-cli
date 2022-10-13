@@ -1,3 +1,12 @@
+### [5.1.7](https://github.com/isha689/twilio-cli/compare/5.1.6...5.1.7) (2022-10-13)
+
+
+### Library - Fixes
+
+* calculate sha ([b89f942](https://github.com/isha689/twilio-cli/commit/b89f942ea2764595b8b08b5b0302e3c0250d7722))
+* calculate sha ([d4c4181](https://github.com/isha689/twilio-cli/commit/d4c4181df367074c41946453f5cf0a4e29849671))
+* path ([e4f349c](https://github.com/isha689/twilio-cli/commit/e4f349c5972f661f5dc7a5aef8eb230fdb6a77d6))
+
 ### [5.1.6](https://github.com/isha689/twilio-cli/compare/5.1.5...5.1.6) (2022-10-13)
 
 
