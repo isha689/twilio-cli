@@ -1,3 +1,11 @@
+### [5.1.7-draft.1](https://github.com/isha689/twilio-cli/compare/5.1.6...5.1.7-draft.1) (2022-10-13)
+
+
+### Library - Fixes
+
+* invoking scoop workflow ([b32fec5](https://github.com/isha689/twilio-cli/commit/b32fec5d4b38c9e5bd049c26f98d89094fd8e0ef))
+* path ([e4f349c](https://github.com/isha689/twilio-cli/commit/e4f349c5972f661f5dc7a5aef8eb230fdb6a77d6))
+
 ### [5.1.6](https://github.com/isha689/twilio-cli/compare/5.1.5...5.1.6) (2022-10-13)
 
 
