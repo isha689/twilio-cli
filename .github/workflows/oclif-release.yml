@@ -25,6 +25,7 @@ jobs:
       matrix:
         include:
           - os: macos-latest
+            asset_name: twilio-${{ github.event.inputs.tag-name }}
             command_name: npx oclif-dev pack --xz -t darwin-arm64,win32-x64,win32-x86,darwin-x64
             publish: homebrew
     steps:
@@ -44,11 +45,11 @@ jobs:
           make install
           brew install coreutils
           if [ "${{github.event.inputs.formula}}" == "twiliorc" ]; then
-            echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+            echo "::set-output name=sha256::$(sha256sum dist/channels/rc/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           elif [ "${{github.event.inputs.formula}}" == "twiliodraft" ]; then
-            echo "::set-output name=sha256::$(sha256sum dist/channels/draft/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+            echo "::set-output name=sha256::$(sha256sum dist/channels/draft/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           else
-            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           fi
       - name: Upload binaries to release
         if: always()
