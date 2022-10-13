@@ -154,13 +154,13 @@
             "baseDir": "<%- bin %>",
             "unversioned": "<%- channel === 'stable' ? '' : 'channels/' + channel + '/' %><%- bin %>-<%- platform %>-<%- arch %><%- ext %>",
             "versioned": "<%- channel === 'stable' ? '' : 'channels/' + channel + '/' %><%- bin %>-<%- platform %>-<%- arch %><%- ext %>",
-            "manifest": "<%- channel === 'stable' ? '' : 'channels/' + channel + '/' %><%- platform %>-<%- arch %>"
+            "manifest": "<%- platform %>-<%- arch %>"
           },
           "vanilla": {
             "baseDir": "<%- bin %>",
             "unversioned": "<%- channel === 'stable' ? '' : 'channels/' + channel + '/' %><%- bin %><%- ext %>",
             "versioned": "<%- channel === 'stable' ? '' : 'channels/' + channel + '/' %><%- bin %>-<%- version %><%- ext %>",
-            "manifest": "<%- channel === 'stable' ? '' : 'channels/' + channel + '/' %>version"
+            "manifest": "version"
           }
         }
       }
