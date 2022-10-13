@@ -1,3 +1,16 @@
+### [5.1.4](https://github.com/isha689/twilio-cli/compare/5.1.3...5.1.4) (2022-10-13)
+
+
+### Library - Fixes
+
+* file path ([5aed6f1](https://github.com/isha689/twilio-cli/commit/5aed6f1fa7d4e124df34b5cd28422ef122adb02c))
+* folder structure ([ef43b31](https://github.com/isha689/twilio-cli/commit/ef43b31960612062247cbfcf660ce1d99241e121))
+* overwriting ([636b9ed](https://github.com/isha689/twilio-cli/commit/636b9ed97430f888dce1f4141591264a2825284f))
+* path not defined ([7659557](https://github.com/isha689/twilio-cli/commit/76595575a99b9e521339cb9637e42fe1c8b501da))
+* pushing dir to assets ([21709c6](https://github.com/isha689/twilio-cli/commit/21709c672618a553f1285e9da31e5682c1e3857f))
+* removing asset name ([5b6dca7](https://github.com/isha689/twilio-cli/commit/5b6dca734ad00612eb8f242542160fd450e6a528))
+* test ([90a0e7a](https://github.com/isha689/twilio-cli/commit/90a0e7ab18448be69848d8030e3e94dd871a1e4d))
+
 ### [5.1.3](https://github.com/isha689/twilio-cli/compare/5.1.2...5.1.3) (2022-10-12)
 
 
