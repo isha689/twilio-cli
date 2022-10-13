@@ -1,3 +1,10 @@
+### [5.1.5](https://github.com/isha689/twilio-cli/compare/5.1.4...5.1.5) (2022-10-13)
+
+
+### Library - Fixes
+
+* fixed folder structure ([b890937](https://github.com/isha689/twilio-cli/commit/b8909375d70a0fb664e4f24c7e2ddffe905b0545))
+
 ### [5.1.4](https://github.com/isha689/twilio-cli/compare/5.1.3...5.1.4) (2022-10-13)
 
 
