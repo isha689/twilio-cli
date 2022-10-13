@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const { GitHub } = require('@actions/github');
 const fs = require('fs');
+const path = require('path');
 
 /**
  * Functionality from svenstaro/upload-release-action.
