@@ -36,16 +36,6 @@ jobs:
             brew install makensis
           fi
           ${{ matrix.command_name }}
-      - name: Upload binaries to release
-        if: always()
-        run: |
-          node .github/scripts/update-platform-executables.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DIRNAME: dist
-          OVERWRITE: true
-          TAG_NAME: ${{github.event.inputs.tag-name}}
-          REPO_NAME: ${{ github.repository }}
       - name: Calculate sha of oclif dev pack
         id: sha256
         if: ${{matrix.publish == 'homebrew'}}
@@ -60,6 +50,16 @@ jobs:
           else
             echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
           fi
+      - name: Upload binaries to release
+        if: always()
+        run: |
+          node .github/scripts/update-platform-executables.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DIRNAME: dist
+          OVERWRITE: true
+          TAG_NAME: ${{github.event.inputs.tag-name}}
+          REPO_NAME: ${{ github.repository }}
   home-brew-release:
     name: Trigger homebrew release workflow
     runs-on: ubuntu-latest
