@@ -1,3 +1,11 @@
+### [5.1.6](https://github.com/isha689/twilio-cli/compare/5.1.5...5.1.6) (2022-10-13)
+
+
+### Library - Fixes
+
+* update brew and scoop ([63f4e90](https://github.com/isha689/twilio-cli/commit/63f4e90105ad8f922ea52f2c0ab1382b56ef3019))
+* versionless files ([576a640](https://github.com/isha689/twilio-cli/commit/576a640b56c063dbcc0e500708b15d34e0907274))
+
 ### [5.1.5](https://github.com/isha689/twilio-cli/compare/5.1.4...5.1.5) (2022-10-13)
 
 
