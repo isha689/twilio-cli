@@ -120,7 +120,7 @@ const updatePlatformExecutables = async () => {
         // Stat the file to see if we have a file or dir
         const stat = await fs.promises.stat( fromPath );
         if( stat.isFile() ){
-          iterateOverFile(file,file);
+          iterateOverFile(dirname + "/" + file,file);
         }
         else if( stat.isDirectory() ){
           iterateOverDirectory(dirname + "/" + file)
