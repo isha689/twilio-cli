@@ -43,6 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DIRNAME: dist
+          OVERWRITE: true
           TAG_NAME: ${{github.event.inputs.tag-name}}
           REPO_NAME: ${{ github.repository }}
 #      - name: Upload binaries to release - tar.xz
