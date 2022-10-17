@@ -44,7 +44,7 @@ jobs:
           make clean
           make install
           brew install coreutils
-            echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
+          echo "::set-output name=sha256::$(sha256sum dist/${{ matrix.asset_name }}.tar.gz | awk '{print $1}')"
       - name: Upload binaries to release
         if: always()
         run: |
