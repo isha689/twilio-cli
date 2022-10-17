@@ -307,7 +307,7 @@ jobs:
           twilio --version
           twilio api --help
       - name: Draft - Perform testing on scoop installations
-        if: ${{ github.respository == 'twilio/draft-release-branch' }}
+        if: ${{ github.respository == 'isha689/draft-release-branch' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
