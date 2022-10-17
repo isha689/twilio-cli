@@ -1,3 +1,11 @@
+### [5.1.8](https://github.com/isha689/twilio-cli/compare/5.1.7...5.1.8) (2022-10-13)
+
+
+### Library - Fixes
+
+* changed manifest url ([7c9ac14](https://github.com/isha689/twilio-cli/commit/7c9ac14ea37249064b1496873f59de04cfc13815))
+* fix source name ([3b14046](https://github.com/isha689/twilio-cli/commit/3b140468d92c186a02c5792ac1e9b5c5a19e74c7))
+
 ### [5.1.7](https://github.com/isha689/twilio-cli/compare/5.1.6...5.1.7) (2022-10-13)
 
 
