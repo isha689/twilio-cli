@@ -1,3 +1,10 @@
+### [5.1.10-draft.2](https://github.com/isha689/twilio-cli/compare/5.1.10-draft.1...5.1.10-draft.2) (2022-10-17)
+
+
+### Library - Fixes
+
+* removed channels/draft ([b2fc09e](https://github.com/isha689/twilio-cli/commit/b2fc09ed45c42732585e82bac6e275f5cbd9c685))
+
 ### [5.1.10-draft.1](https://github.com/isha689/twilio-cli/compare/5.1.9...5.1.10-draft.1) (2022-10-17)
 
 
