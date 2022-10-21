@@ -11,8 +11,8 @@ steps:
         - npm install -g @oclif/dev-cli
         - oclif-dev pack -t linux-x64,linux-arm
       plugins:
-        - docker#v3.8.0:
-            image: "node:7"
+        - docker-compose#v3.9.0:
+            run: app
 
     - wait
 
