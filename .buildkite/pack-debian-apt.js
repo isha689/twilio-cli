@@ -110,12 +110,12 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
     const ftparchive = qq.join(rootDir, 'tmp', 'apt', 'apt-ftparchive.conf');
     await qq.write(ftparchive, scripts.ftparchive(config));
     await qq.x(`apt-ftparchive -c "${ftparchive}" release . > Release`, {cwd: dist});
-    const gpgKey = process.env.GPG_SIGNING_KEY_ID;
-    const passphrase = process.env.GPG_SIGNING_KEY_PASSPHRASE;
-    if (gpgKey) {
-      await qq.x(`gpg --digest-algo SHA512 --clearsign -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o InRelease Release`, {cwd: dist});
-      await qq.x(`gpg --digest-algo SHA512 -abs -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o Release.gpg Release`, {cwd: dist});
-    }
+    // const gpgKey = process.env.GPG_SIGNING_KEY_ID;
+    // const passphrase = process.env.GPG_SIGNING_KEY_PASSPHRASE;
+    // if (gpgKey) {
+    //   await qq.x(`gpg --digest-algo SHA512 --clearsign -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o InRelease Release`, {cwd: dist});
+    //   await qq.x(`gpg --digest-algo SHA512 -abs -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o Release.gpg Release`, {cwd: dist});
+    // }
     await qq.x(`aws s3 cp ${dist} s3://${pjson.oclif.update.s3.bucket}/apt --recursive --acl public-read`);
   }
   // importing secret key
@@ -129,7 +129,7 @@ PATH=$PATH:$PWD/bin eval $(PATH=$PATH:$PWD/bin node -p "require('./package').scr
   }
 
 (async () => {
-  importGPG();
+  // importGPG();
   const archStr = process.argv[2];
   const arches = archStr.split(",");
   await packDebian(arches);

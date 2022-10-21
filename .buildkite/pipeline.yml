@@ -1,10 +1,10 @@
 agents:
   queue: "devtools-buildkite-agent"
 steps:
-    - label: "Configure AWS credentials"
-      key: aws-login
-
-    - wait
+#    - label: "Configure AWS credentials"
+#      key: aws-login
+#
+#    - wait
 
     - label: "generate linux tarball"
       command:
