@@ -5,6 +5,8 @@ steps:
 #    - wait
 
     - label: "generate linux tarball"
+      agents:
+        os: "ubuntu-latest"
       command:
         - make install
         - npm cache clear & npm install
