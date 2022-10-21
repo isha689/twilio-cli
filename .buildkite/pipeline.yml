@@ -19,6 +19,9 @@ steps:
     - label: "Build Deb Package"
       key: gpg
       command: node .buildkite/pack-debian-apt.js x64,arm
+      plugins:
+        - docker#v3.8.0:
+            image: "node:14"
 
 #notify:
 #  - slack: "#general"
