@@ -18,8 +18,8 @@ steps:
       key: gpg
       command: node .buildkite/pack-debian-apt.js x64,arm
 
-notify:
-  - slack: "#general"
-    if: build.state == "failed" || build.state == "canceled"
-    message: "APT Release Failed"
+#notify:
+#  - slack: "#general"
+#    if: build.state == "failed" || build.state == "canceled"
+#    message: "APT Release Failed"
 
