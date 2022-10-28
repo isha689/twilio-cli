@@ -45,7 +45,7 @@ steps:
         - unzip awscliv2.zip
         - apt update
         - apt install sudo
-        - apt-get update && apt-get install -y libsecret-1-dev
+        - apt-get update && apt-get install -y apt-utils
         - sudo ./aws/install
         - aws --version
         - node .buildkite/pack-debian-apt.js x64,arm
