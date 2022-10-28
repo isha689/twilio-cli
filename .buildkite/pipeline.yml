@@ -33,7 +33,7 @@ steps:
       command:
         - make install
         - npm cache clear & npm install
-        - node . ./.github/scripts/pack-debian-apt.js x64,arm
+        - . ./.github/scripts/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
             image: "node:14"
