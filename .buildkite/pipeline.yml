@@ -46,6 +46,7 @@ steps:
         - apt update
         - apt install sudo
         - apt-get update && apt-get install -y apt-utils
+        - apt update && apt install apt-ftparchive
         - sudo ./aws/install
         - aws --version
         - node .buildkite/pack-debian-apt.js x64,arm
