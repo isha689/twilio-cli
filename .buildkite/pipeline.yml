@@ -45,9 +45,9 @@ steps:
         - unzip awscliv2.zip
         - apt update
         - apt install sudo
+        - apt install apt-utils
         - sudo ./aws/install
         - aws --version
-        - apt install apt-ftparchive
         - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
