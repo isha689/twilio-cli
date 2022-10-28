@@ -25,7 +25,12 @@ steps:
       plugins:
         - docker#v3.8.0:
             image: "node:14"
-            propagate-aws-auth-tokens: true
+        - docker#v3.11.0:
+          propagate-environment: true
+          debug: true
+          image: amazon/aws-cli:2.0.6
+          entrypoint: ""
+          shell: [ "/bin/sh", "-e", "-c" ]
 
 #notify:
 #  - slack: "#general"
