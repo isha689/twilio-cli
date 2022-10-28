@@ -40,7 +40,6 @@ steps:
       command:
         - apt update
         - apt install sudo
-        - apt-get update && apt-get install -y apt-utils
         - sudo apt install npm
         - npm cache clear & npm install
         - npm install -g @oclif/dev-cli
