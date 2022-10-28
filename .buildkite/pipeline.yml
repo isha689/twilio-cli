@@ -40,8 +40,9 @@ steps:
       command:
         - apt update
         - apt install sudo
+        - sudo apt update & sudo apt install curl
         - curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-        - sudo apt update & sudo apt install -y npm nodejs
+        - sudo apt install -y nodejs
         - npm cache clear & npm install
         - npm install -g @oclif/dev-cli
         - oclif-dev pack -t linux-x64,linux-arm
