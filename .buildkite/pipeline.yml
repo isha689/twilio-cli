@@ -42,6 +42,8 @@ steps:
         - npm cache clear & npm install
         - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
         - unzip awscliv2.zip
+        - apt update
+        - apt install sudo
         - sudo ./aws/install
         - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
