@@ -4,17 +4,17 @@ steps:
 #
 #    - wait
 
-    - label: "generate linux tarball"
-      command:
-        - make install
-        - npm cache clear & npm install
-        - npm install -g @oclif/dev-cli
-        - oclif-dev pack -t linux-x64,linux-arm
-      plugins:
-        - docker#v3.8.0:
-            image: "node:14"
-
-    - wait
+#    - label: "generate linux tarball"
+#      command:
+#        - make install
+#        - npm cache clear & npm install
+#        - npm install -g @oclif/dev-cli
+#        - oclif-dev pack -t linux-x64,linux-arm
+#      plugins:
+#        - docker#v3.8.0:
+#            image: "node:14"
+#
+#    - wait
 
 #    - label: "Aws credentials"
 #      command:
@@ -28,7 +28,7 @@ steps:
 #
     - label: "fetch existing Packages file"
       command:
-        - aws s3 cp s3://twilio-cli-prod/apt/Packages ./dist/deb/Packages
+        - s3 cp s3://twilio-cli-prod/apt/Packages ./dist/deb/Packages
       plugins:
         - docker#v3.11.0:
             propagate-environment: true
