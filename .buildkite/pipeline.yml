@@ -38,7 +38,6 @@ steps:
     - label: "Build Deb Package"
       key: gpg
       command:
-        - make install
         - npm cache clear & npm install
         - npm install -g @oclif/dev-cli
         - oclif-dev pack -t linux-x64,linux-arm
