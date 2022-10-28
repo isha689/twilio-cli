@@ -26,7 +26,14 @@ steps:
 #            entrypoint: ""
 #            shell: [ "/bin/sh", "-e", "-c" ]
 #
-#    - wait
+    - label: "fetch existing Packages file"
+      command:
+        - aws s3 cp s3://twilio-cli-prod/apt/Packages ./dist/deb/Packages
+      plugins:
+        - docker#v3.11.0:
+            propagate-environment: true
+            image: "amazon/aws-cli:2.0.6"
+    - wait
 
     - label: "Build Deb Package"
       key: gpg
@@ -38,14 +45,7 @@ steps:
         - docker#v3.8.0:
             image: "node:14"
 #    - wait
-#
-#    - label: "pack apt"
-#      command:
-#        - aws s3 cp
-#      plugins:
-#        - docker#v3.11.0:
-#            propagate-environment: true
-#            image: "amazon/aws-cli:2.0.6"
+
 #notify:
 #  - slack: "#general"
 #    if: build.state == "failed" || build.state == "canceled"
