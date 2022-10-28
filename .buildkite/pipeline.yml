@@ -21,6 +21,7 @@ steps:
       command:
         - make install
         - npm cache clear & npm install
+        - apk add --no-cache aws-cli
         - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
