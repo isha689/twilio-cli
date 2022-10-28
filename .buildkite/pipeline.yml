@@ -47,10 +47,13 @@ steps:
         - apt install sudo
         - sudo ./aws/install
         - aws --version
+        - apt install apt-ftparchive
         - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
-        - docker#v3.8.0:
-            image: "ubuntu:latest","node:14"
+        - docker-compose#v3.0.3:
+            run: app
+#        - docker#v3.8.0:
+#            image: "node:14"
 #    - wait
 
 #notify:
