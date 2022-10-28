@@ -16,15 +16,21 @@ steps:
 
 #    - wait
 
-    - label: "Build Deb Package"
-      key: gpg
+    - label: "make install"
       command:
         - make install
         - npm cache clear & npm install
-        - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
             image: "node:14"
+
+    - wait
+
+    - label: "Build Deb package"
+      key: gpg
+      command:
+        - .buildkite/pack-debian-apt.js x64,arm
+      plugins:
         - docker#v3.11.0:
             propagate-environment: true
             image: "amazon/aws-cli:2.0.6"
