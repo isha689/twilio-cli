@@ -4,17 +4,17 @@ steps:
 #
 #    - wait
 
-#    - label: "generate linux tarball"
-#      command:
-#        - make install
-#        - npm cache clear & npm install
-#        - npm install -g @oclif/dev-cli
-#        - oclif-dev pack -t linux-x64,linux-arm
-#      plugins:
-#        - docker#v3.8.0:
-#            image: "node:14"
+    - label: "generate linux tarball"
+      command:
+        - make install
+        - npm cache clear & npm install
+        - npm install -g @oclif/dev-cli
+        - oclif-dev pack -t linux-x64,linux-arm
+      plugins:
+        - docker#v3.8.0:
+            image: "node:14"
 
-#    - wait
+    - wait
 
 #    - label: "Aws credentials"
 #      command:
@@ -33,18 +33,19 @@ steps:
       command:
         - make install
         - npm cache clear & npm install
+        - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
             image: "node:14"
-    - wait
-
-    - label: "pack apt"
-      command:
-        - .buildkite/pack-debian-apt.js x64,arm
-      plugins:
-        - docker#v3.11.0:
-            propagate-environment: true
-            image: "amazon/aws-cli:2.0.6"
+#    - wait
+#
+#    - label: "pack apt"
+#      command:
+#        - aws s3 cp
+#      plugins:
+#        - docker#v3.11.0:
+#            propagate-environment: true
+#            image: "amazon/aws-cli:2.0.6"
 #notify:
 #  - slack: "#general"
 #    if: build.state == "failed" || build.state == "canceled"
