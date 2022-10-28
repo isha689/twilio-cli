@@ -33,11 +33,18 @@ steps:
       command:
         - make install
         - npm cache clear & npm install
-        - . ./.github/scripts/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
             image: "node:14"
+    - wait
 
+    - label: "pack apt"
+      command:
+        - .buildkite/pack-debian-apt.js x64,arm
+      plugins:
+        - docker#v3.11.0:
+            propagate-environment: true
+            image: "amazon/aws-cli:2.0.6"
 #notify:
 #  - slack: "#general"
 #    if: build.state == "failed" || build.state == "canceled"
