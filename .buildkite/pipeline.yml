@@ -4,17 +4,17 @@ steps:
 #
 #    - wait
 
-    - label: "generate linux tarball"
-      command:
-        - make install
-        - npm cache clear & npm install
-        - npm install -g @oclif/dev-cli
-        - oclif-dev pack -t linux-x64,linux-arm
-      plugins:
-        - docker#v3.8.0:
-            image: "node:14"
-
-    - wait
+#    - label: "generate linux tarball"
+#      command:
+#        - make install
+#        - npm cache clear & npm install
+#        - npm install -g @oclif/dev-cli
+#        - oclif-dev pack -t linux-x64,linux-arm
+#      plugins:
+#        - docker#v3.8.0:
+#            image: "node:14"
+#
+#    - wait
 
 #    - label: "Aws credentials"
 #      command:
@@ -40,6 +40,8 @@ steps:
       command:
         - make install
         - npm cache clear & npm install
+        - npm install -g @oclif/dev-cli
+        - oclif-dev pack -t linux-x64,linux-arm
         - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
         - unzip awscliv2.zip
         - apt update
