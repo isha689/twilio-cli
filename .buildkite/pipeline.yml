@@ -50,8 +50,7 @@ steps:
         - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
-            image: "ubuntu:latest","node:14"
-
+            image: "ubuntu:latest"
 #    - wait
 
 #notify:
