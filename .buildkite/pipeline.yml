@@ -45,6 +45,7 @@ steps:
         - apt update
         - apt install sudo
         - sudo ./aws/install
+        - aws --version
         - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
