@@ -21,11 +21,11 @@ steps:
       command:
         - make install
         - npm cache clear & npm install
-        - apk add --no-cache aws-cli
         - node .buildkite/pack-debian-apt.js x64,arm
       plugins:
         - docker#v3.8.0:
-            image: "node:14"
+            image: "registry.twilio.com/twilio/cookbook-buildkite-environment/role:0.1.3"
+            propagate-aws-auth-tokens: true
 
 #notify:
 #  - slack: "#general"
