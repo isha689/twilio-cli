@@ -80,12 +80,11 @@ jobs:
         id: extract_branch
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
   apt-release:
-    runs-on: ubuntu-latest
     steps:
-      uses: zegocover/buildkite-pipeline-action@master
-      with:
-        access_token: '${{ secrets.BUILDKITE_ACCESS_TOKEN }}'
-        pipeline: 'Isha/apt-packages'
+      - uses: zegocover/buildkite-pipeline-action@master
+        with:
+          access_token: '${{ secrets.BUILDKITE_ACCESS_TOKEN }}'
+          pipeline: 'Isha/apt-packages'
   oclif-release:
     runs-on: ubuntu-latest
     needs: [release]
