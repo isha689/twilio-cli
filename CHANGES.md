@@ -11,6 +11,27 @@
 ### Library - Chores
 
 * add buildkite job for apt release ([b29a83a](https://github.com/isha689/twilio-cli/commit/b29a83a1a4e9f116155cf1cdd2ef93d66715c84c))
+* **release:** set `package.json` to 5.1.11 [skip ci] ([e704399](https://github.com/isha689/twilio-cli/commit/e704399af17c59898c1d8c5030ab2086b5de0376))
+* **release:** set `package.json` to 5.1.11 [skip ci] ([d9edd6a](https://github.com/isha689/twilio-cli/commit/d9edd6a100c2f83ede5e1371209ffa07c267e453))
+* **release:** set `package.json` to 5.1.11 [skip ci] ([f2da22a](https://github.com/isha689/twilio-cli/commit/f2da22aefe30be8a03a022544e9eb7a20ffef898))
+* **release:** set `package.json` to 5.1.11 [skip ci] ([d2031a7](https://github.com/isha689/twilio-cli/commit/d2031a7f178616e30aee94c30d671b6118f3fd17))
+* **release:** set `package.json` to 5.1.11 [skip ci] ([cf9e921](https://github.com/isha689/twilio-cli/commit/cf9e921b47ed99a9d2b0f8582586fce518d53c67))
+* **release:** set `package.json` to 5.1.11 [skip ci] ([9294cb8](https://github.com/isha689/twilio-cli/commit/9294cb8af439203c6c25c569a31f09e3f9980038))
+* **release:** set `package.json` to 5.1.11 [skip ci] ([b01c32e](https://github.com/isha689/twilio-cli/commit/b01c32e95ba4885fa3dca687e90f5478dfef502c))
+
+### [5.1.11](https://github.com/isha689/twilio-cli/compare/5.1.10...5.1.11) (2022-10-31)
+
+
+### Library - Fixes
+
+* fake commit ([9efa3fe](https://github.com/isha689/twilio-cli/commit/9efa3fec412bdff26b5b82fb2438428466c22095))
+* scoop test fix ([b00cdec](https://github.com/isha689/twilio-cli/commit/b00cdec96799d82ccbdc254be68ad1e0db5e72e5))
+* scoop test fix ([9eeda5d](https://github.com/isha689/twilio-cli/commit/9eeda5db936b8c8975d4b51832f7da928b21285c))
+
+
+### Library - Chores
+
+* add buildkite job for apt release ([b29a83a](https://github.com/isha689/twilio-cli/commit/b29a83a1a4e9f116155cf1cdd2ef93d66715c84c))
 * **release:** set `package.json` to 5.1.11 [skip ci] ([d9edd6a](https://github.com/isha689/twilio-cli/commit/d9edd6a100c2f83ede5e1371209ffa07c267e453))
 * **release:** set `package.json` to 5.1.11 [skip ci] ([f2da22a](https://github.com/isha689/twilio-cli/commit/f2da22aefe30be8a03a022544e9eb7a20ffef898))
 * **release:** set `package.json` to 5.1.11 [skip ci] ([d2031a7](https://github.com/isha689/twilio-cli/commit/d2031a7f178616e30aee94c30d671b6118f3fd17))
