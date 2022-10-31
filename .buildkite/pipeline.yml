@@ -1,0 +1,42 @@
+steps:
+  #    - label: "Configure AWS credentials"
+  #      key: aws-login
+  #
+  #    - wait
+
+  #    - label: "Aws credentials"
+  #      command:
+  #        - aws s3 cp
+  #      plugins:
+  #        - docker#v3.11.0:
+  #            propagate-environment: true
+  #            image: "amazon/aws-cli:2.0.6"
+  #            entrypoint: ""
+  #            shell: [ "/bin/sh", "-e", "-c" ]
+
+  - label: "Generate linux tarball and Build Deb Package"
+    key: gpg
+    command:
+      - npm cache clear & npm install
+      - npm install -g @oclif/dev-cli
+      - oclif-dev pack -t linux-x64,linux-arm
+      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - unzip awscliv2.zip
+      - apt update
+      - apt install sudo
+      - sudo apt update && sudo apt install -y apt-utils
+      - sudo ./aws/install
+      - aws --version
+      - node .buildkite/pack-debian-apt.js x64,arm
+    plugins:
+      - docker#v3.8.0:
+          image: "node:14"
+
+#notify:
+#    - slack:
+#        channels:
+#          - "#alerts-dev-interfaces"
+#        message: "Twilio Cli- APT release failed"
+#        if: |
+#          build.state == "canceled" ||
+#            build.state == "failed"
