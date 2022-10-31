@@ -4,18 +4,6 @@ steps:
 #
 #    - wait
 
-#    - label: "generate linux tarball"
-#      command:
-#        - make install
-#        - npm cache clear & npm install
-#        - npm install -g @oclif/dev-cli
-#        - oclif-dev pack -t linux-x64,linux-arm
-#      plugins:
-#        - docker#v3.8.0:
-#            image: "node:14"
-#
-#    - wait
-
 #    - label: "Aws credentials"
 #      command:
 #        - aws s3 cp
@@ -25,17 +13,8 @@ steps:
 #            image: "amazon/aws-cli:2.0.6"
 #            entrypoint: ""
 #            shell: [ "/bin/sh", "-e", "-c" ]
-#
-#    - label: "fetch existing Packages file"
-#      command:
-#        - s3 cp s3://twilio-cli-prod/apt/Packages ./dist/deb/Packages
-#      plugins:
-#        - docker#v3.11.0:
-#            propagate-environment: true
-#            image: "amazon/aws-cli:2.0.6"
-#    - wait
 
-    - label: "Build Deb Package"
+    - label: "Generate linux tarball and Build Deb Package"
       key: gpg
       command:
         - npm cache clear & npm install
@@ -52,10 +31,12 @@ steps:
       plugins:
         - docker#v3.8.0:
             image: "node:14"
-#    - wait
 
 #notify:
-#  - slack: "#general"
-#    if: build.state == "failed" || build.state == "canceled"
-#    message: "APT Release Failed"
-
+#    - slack:
+#        channels:
+#          - "#alerts-dev-interfaces"
+#        message: "Twilio Cli- APT release failed"
+#        if: |
+#          build.state == "canceled" ||
+#            build.state == "failed"
