@@ -80,6 +80,7 @@ jobs:
         id: extract_branch
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
   apt-release:
+    runs-on: ubuntu-latest
     uses: zegocover/buildkite-pipeline-action@master
     with:
       access_token: '${{ secrets.BUILDKITE_ACCESS_TOKEN }}'
