@@ -70,7 +70,7 @@ jobs:
       - name: Update release
         run: node .github/scripts/update-release.js
         env:
-          TAG_NAME: v${{steps.semantic-release.outputs.TAG_NAME}}
+          TAG_NAME: ${{steps.semantic-release.outputs.TAG_NAME}}
           RELEASE_BODY: ${{github.event.inputs.change-log}}
           REPO_NAME: ${{ github.repository }}
           REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
