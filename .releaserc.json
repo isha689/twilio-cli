@@ -1,6 +1,7 @@
 {
   "branches": [
     "main",
+    "buildkite-job",
     {
       "name": "release-feature-branch",
       "prerelease": "rc"
