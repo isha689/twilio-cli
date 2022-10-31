@@ -84,7 +84,7 @@ jobs:
     steps:
       - name: Trigger buildkite job
         run: |
-          bash .buildkite/trigger-pipeline.sh
+          bash . /.buildkite/trigger-pipeline.sh
   oclif-release:
     runs-on: ubuntu-latest
     needs: [release]
