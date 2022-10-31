@@ -84,8 +84,8 @@ jobs:
     steps:
       - name: Trigger buildkite job
         uses: "buildkite/trigger-pipeline-action@v1.2.0"
-        with:
-          BUILDKITE_API_ACCESS_TOKEN: '${{ secrets.BUILDKITE_ACCESS_TOKEN }}'
+        env:
+          BUILDKITE_API_ACCESS_TOKEN: ${{ secrets.BUILDKITE_ACCESS_TOKEN }}
           PIPELINE: 'Isha/apt-packages'
   oclif-release:
     runs-on: ubuntu-latest
