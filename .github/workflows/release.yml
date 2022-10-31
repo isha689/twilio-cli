@@ -83,7 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger buildkite job
-        uses: "buildkite/trigger-pipeline-action@v1.2.0"
+        uses: "EnricoMi/trigger-pipeline-action@master"
         env:
           BUILDKITE_API_ACCESS_TOKEN: ${{ secrets.BUILDKITE_ACCESS_TOKEN }}
           PIPELINE: 'Isha/apt-packages'
