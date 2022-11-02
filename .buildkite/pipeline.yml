@@ -27,6 +27,6 @@ notify:
         channels:
           - "#alerts-dev-interfaces"
         message: "TESTING: DON'T MIND THIS MESSAGE Twilio Cli- APT release failed"
-        if: |
+      if: |
           build.state == "canceled" ||
             build.state == "failed"
