@@ -5,7 +5,7 @@ steps:
       - npm cache clear & npm install
       - npm install -g @oclif/dev-cli
       - oclif-dev pack -t linux-x64,linux-arm
-      - npm install -g aws-cli
+      - npm install aws-sdk
 #      - apt update && apt install sudo
 #      - sudo apt update && sudo apt install -y apt-utils
       - node .buildkite/pack-debian-apt.js x64,arm
