@@ -7,7 +7,7 @@ then
     echo '--- :buildkite: Getting Secrets from Admiral'
 
     apk add --no-cache aws-cli
-    aws s3 cp s3://com-twilio-corp-us1-secrets/v1/buildkite-build-worker/jobs_dev_interfaces_aws_gpg_s3/AWS_ACCESS_KEY_ID aws_access_key_id
+    aws s3 cp s3://com-twilio-corp-us1-secrets/v1/buildkite-build-worker/jobs_dev_interfaces_aws_gpg_s3/latest aws_access_key_id
     AWS_ACCESS_KEY_ID=$(cat aws_access_key_id)
     rm aws_access_key_id
 
