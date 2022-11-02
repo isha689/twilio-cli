@@ -15,7 +15,7 @@ steps:
   #            shell: [ "/bin/sh", "-e", "-c" ]
 
   - label: "Generate linux tarball and Build Deb Package"
-    key: gpg
+    key: aws-login
     command:
       - npm cache clear & npm install
       - npm install -g @oclif/dev-cli
@@ -31,6 +31,10 @@ steps:
     plugins:
       - docker#v3.8.0:
           image: "node:14"
+          environment:
+            - "AWS_ACCESS_KEY_ID"
+            - "AWS_SECRET_ACCESS_KEY"
+            - "AWS_SESSION_TOKEN"
 
 #notify:
 #    - slack:
