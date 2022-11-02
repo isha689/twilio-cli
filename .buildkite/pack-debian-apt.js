@@ -85,7 +85,7 @@ const packDebian = async (arch) => {
   }
   try {
     // fetch existing Packages file which needs to be modified for new version
-    await qq.x(`aws --no-sign-request s3 cp s3://twilio-cli-prod/apt/Packages Packages`, {cwd: dist, reject: false});
+    await qq.x(`aws s3 cp s3://twilio-cli-prod/apt/Packages Packages`, {cwd: dist, reject: false});
     const content = fs.readFileSync(`${dist}/Packages`);
   }
   catch(error) {
@@ -110,12 +110,12 @@ const packDebian = async (arch) => {
   const ftparchive = qq.join(rootDir, 'tmp', 'apt', 'apt-ftparchive.conf');
   await qq.write(ftparchive, scripts.ftparchive(config));
   await qq.x(`apt-ftparchive -c "${ftparchive}" release . > Release`, {cwd: dist});
-  // const gpgKey = process.env.GPG_SIGNING_KEY_ID;
-  // const passphrase = process.env.GPG_SIGNING_KEY_PASSPHRASE;
-  // if (gpgKey) {
-  //   await qq.x(`gpg --digest-algo SHA512 --clearsign -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o InRelease Release`, {cwd: dist});
-  //   await qq.x(`gpg --digest-algo SHA512 -abs -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o Release.gpg Release`, {cwd: dist});
-  // }
+  const gpgKey = process.env.GPG_SIGNING_KEY_ID;
+  const passphrase = process.env.GPG_SIGNING_KEY_PASSPHRASE;
+  if (gpgKey) {
+    await qq.x(`gpg --digest-algo SHA512 --clearsign -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o InRelease Release`, {cwd: dist});
+    await qq.x(`gpg --digest-algo SHA512 -abs -u ${gpgKey} --batch --pinentry-mode loopback --passphrase ${passphrase} -o Release.gpg Release`, {cwd: dist});
+  }
   await qq.x(`aws s3 cp ${dist} s3://twilio-cli-dev/apt --recursive --acl public-read`);
 }
 // importing secret key
@@ -129,7 +129,7 @@ const importGPG  = async() => {
 }
 
 (async () => {
-  // importGPG();
+  importGPG();
   const archStr = process.argv[2];
   const arches = archStr.split(",");
   await packDebian(arches);

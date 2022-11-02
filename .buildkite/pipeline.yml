@@ -35,6 +35,9 @@ steps:
             - "AWS_ACCESS_KEY_ID"
             - "AWS_SECRET_ACCESS_KEY"
             - "AWS_SESSION_TOKEN"
+            - "GPG_SIGNING_KEY"
+            - "GPG_SIGNING_KEY_ID"
+            - "GPG_SIGNING_KEY_PASSPHRASE"
 
 #notify:
 #    - slack:
