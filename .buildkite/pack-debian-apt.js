@@ -85,7 +85,7 @@ const packDebian = async (arch) => {
   }
   try {
     // fetch existing Packages file which needs to be modified for new version
-    await qq.x(`aws --no-sign-request s3 cp s3://twilio-cli-prod/apt/Packages Packages`, {cwd: dist, reject: false});
+    await qq.x(`aws s3 cp s3://twilio-cli-dev/apt/Packages Packages`, {cwd: dist, reject: false});
     const content = fs.readFileSync(`${dist}/Packages`);
   }
   catch(error) {

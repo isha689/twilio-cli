@@ -6,7 +6,7 @@ steps:
       - npm install -g @oclif/dev-cli
       - oclif-dev pack -t linux-x64,linux-arm
       - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-      - unzip awscliv2.zip
+      - unzip -qq awscliv2.zip
       - apt update && apt install sudo
       - sudo apt update && sudo apt install -y apt-utils
       - sudo ./aws/install
@@ -22,11 +22,11 @@ steps:
             - "GPG_SIGNING_KEY_ID"
             - "GPG_SIGNING_KEY_PASSPHRASE"
 
-notify:
-    - slack:
-        channels:
-          - "#alerts-dev-interfaces"
-        message: "TESTING: DON'T MIND THIS MESSAGE Twilio Cli- APT release failed"
-      if: |
-          build.state == "canceled" ||
-            build.state == "failed"
+#notify:
+#    - slack:
+#        channels:
+#          - "#alerts-dev-interfaces"
+#        message: "TESTING: DON'T MIND THIS MESSAGE Twilio Cli- APT release failed"
+#      if: |
+#          build.state == "canceled" ||
+#            build.state == "failed"
