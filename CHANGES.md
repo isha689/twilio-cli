@@ -1,3 +1,28 @@
+### [5.1.15](https://github.com/isha689/twilio-cli/compare/5.1.14...5.1.15) (2022-11-04)
+
+
+### Library - Chores
+
+* added --no-sign-request ([d0da1f2](https://github.com/isha689/twilio-cli/commit/d0da1f27d4223f97e2dec65219138398a0f8f91f))
+* added --no-sign-request ([b1742e4](https://github.com/isha689/twilio-cli/commit/b1742e41aa0806121c22133bfb62a7e1c469ca50))
+* added aws secrets ([89d42a9](https://github.com/isha689/twilio-cli/commit/89d42a9bfb07613cfece3711f5d7289a7cf92cd8))
+* added aws-cli ([7f2eaff](https://github.com/isha689/twilio-cli/commit/7f2eaffeb195b1023c6c87909b13d9c8e69cf16e))
+* added aws-sdk ([8a9f074](https://github.com/isha689/twilio-cli/commit/8a9f074633b1488028a1590484f02e3c8aa26636))
+* fetching aws secrets ([58343a8](https://github.com/isha689/twilio-cli/commit/58343a86136aa13a2b72f768c43e234be5ef6c5c))
+* fetching aws secrets ([50feb32](https://github.com/isha689/twilio-cli/commit/50feb32eb7c6fdd2fb457198cf54168cab7e15c9))
+* fetching aws secrets ([38967b8](https://github.com/isha689/twilio-cli/commit/38967b8c35be3469df7d7e894fd27400002deab4))
+* fetching aws secrets ([fa602f7](https://github.com/isha689/twilio-cli/commit/fa602f714d11fa00bc166f57fd4fc03d7e6b5677))
+* fetching gpg keys ([1df779d](https://github.com/isha689/twilio-cli/commit/1df779dbbb0ef9bb8188764333370c82b546ab4f))
+* fetching gpg keys ([54b3238](https://github.com/isha689/twilio-cli/commit/54b323866acbd82b0927f8ee2cb1aa5f170b708c))
+* fetching gpg plus aws  keys ([7d0f083](https://github.com/isha689/twilio-cli/commit/7d0f08358465261284f5c7e790594ed2830b512d))
+* fetching gpg plus aws  keys ([2abf3ce](https://github.com/isha689/twilio-cli/commit/2abf3ce6c2fb599c6644ac13ab527d55bac91407))
+* fix slack message indentation ([9ad3247](https://github.com/isha689/twilio-cli/commit/9ad32475a47a63995c17e05fee1fe20c45df8b0e))
+* new gpg secrets ([ce08eca](https://github.com/isha689/twilio-cli/commit/ce08eca1b5fad9e285a801ae7f027cba991f64e8))
+* reverting changes ([69c0e73](https://github.com/isha689/twilio-cli/commit/69c0e73354f1b1e5a442099ffe9d3b5f3b802a8e))
+* silent unzipping ([f025102](https://github.com/isha689/twilio-cli/commit/f025102802d71e8c2c7ce1e844547d80b8e84662))
+* testing slack message ([a029907](https://github.com/isha689/twilio-cli/commit/a029907d2d7a775d7d6e739556c15cbcea520dff))
+* trigger buildkite pipeline ([dcd934d](https://github.com/isha689/twilio-cli/commit/dcd934d1114e3f13ff3fff6ac033aa26e5e85cc4))
+
 ### [5.1.13](https://github.com/isha689/twilio-cli/compare/5.1.12...5.1.13) (2022-10-31)
 
 
