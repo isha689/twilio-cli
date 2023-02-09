@@ -183,13 +183,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*armel.deb'
-          sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-armel.deb
+          gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*amd64.deb'
+          sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-amd64.deb
           ls
           twilio --version
-          gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*amd64.deb'
           twilio api --help
-          sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-amd64.deb
+          gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*armel.deb'
+          sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-armel.deb
           ls
           twilio --version
           twilio api --help
