@@ -182,12 +182,9 @@ jobs:
         id: debian_acceptance_run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          arch: armv7
         run: |
-          gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*amd64.deb'
-          sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-amd64.deb
-          ls
-          twilio --version
-          twilio api --help
           gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*armel.deb'
           sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-armel.deb
           ls
