@@ -184,12 +184,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           arch: armv7
-        run: |
-          gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*armel.deb'
-          sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-armel.deb
-          ls
-          twilio --version
-          twilio api --help
+          run: |
+            gh release download ${{ needs.get-tag.outputs.TAG_NAME }} --pattern '*armel.deb'
+            sudo dpkg -i twilio-${{ needs.get-tag.outputs.TAG_NAME }}-armel.deb
+            ls
+            twilio --version
+            twilio api --help
       - name: setup debian failure output
         if: failure() || cancelled()
         id: failure_debian
